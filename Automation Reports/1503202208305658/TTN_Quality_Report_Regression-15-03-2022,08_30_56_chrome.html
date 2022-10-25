@@ -1,0 +1,1094 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Demo Test Automation Report</title>
+
+	<style type='text/css'>
+		css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Demo Test Automation Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Mar 15, 2022 20:30:56</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='93.396%'><span class='strong'>99</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.66%'>6</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0.943%'>1</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Running on Chrome</span>
+						<span class='test-time'>Mar 15, 2022 20:30:56</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 15, 2022 20:30:56</span>
+	<span class='label end-time'>Mar 15, 2022 21:42:05</span>
+	<span class='label time-taken grey lighten-1 white-text'>1h 11m 9s+720ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1  fail' status='fail' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'><b><font color=blue>test</font></b ></div>						
+						<span class='node-time'>Mar 15, 2022 20:30:56</span>
+						<span class='node-duration'>1h 11m 9s+712ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf fail' status='fail' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>clicklogin</div>						
+						<span class='node-time'>Mar 15, 2022 20:31:04</span>
+						<span class='node-duration'>1h 11m 1s+902ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:33:10 PM</td>
+													<td class='step-details'><b>pressKey</b><BR>TAB key pressed<BR><img data-featherlight='TC_clicklogin/1.png' width='10%' src='TC_clicklogin/1.png' data-src='TC_clicklogin/1.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:33:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Black women are hot in bed" in SentenceField<BR><img data-featherlight='TC_clicklogin/2.png' width='10%' src='TC_clicklogin/2.png' data-src='TC_clicklogin/2.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:34:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I can say it because my girlfriend is white" in SentenceField<BR><img data-featherlight='TC_clicklogin/3.png' width='10%' src='TC_clicklogin/3.png' data-src='TC_clicklogin/3.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:34:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I can say it because my girlfriend is white" in SentenceField<BR><img data-featherlight='TC_clicklogin/4.png' width='10%' src='TC_clicklogin/4.png' data-src='TC_clicklogin/4.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:35:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "are you sure you're fully black?" in SentenceField<BR><img data-featherlight='TC_clicklogin/5.png' width='10%' src='TC_clicklogin/5.png' data-src='TC_clicklogin/5.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:36:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "“Wait, you have 2 kids from the same person?”" in SentenceField<BR><img data-featherlight='TC_clicklogin/6.png' width='10%' src='TC_clicklogin/6.png' data-src='TC_clicklogin/6.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:36:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "“Wait, your kids father is still with you?”" in SentenceField<BR><img data-featherlight='TC_clicklogin/7.png' width='10%' src='TC_clicklogin/7.png' data-src='TC_clicklogin/7.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:37:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "“Wait, there’s no one in your family that’s in jail?”" in SentenceField<BR><img data-featherlight='TC_clicklogin/8.png' width='10%' src='TC_clicklogin/8.png' data-src='TC_clicklogin/8.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:38:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Most Black men are non-functioning crackheads anyway." in SentenceField<BR><img data-featherlight='TC_clicklogin/9.png' width='10%' src='TC_clicklogin/9.png' data-src='TC_clicklogin/9.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:39:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you have any family member dead from a gangfight?" in SentenceField<BR><img data-featherlight='TC_clicklogin/10.png' width='10%' src='TC_clicklogin/10.png' data-src='TC_clicklogin/10.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:39:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So your family isn't on welfare?" in SentenceField<BR><img data-featherlight='TC_clicklogin/11.png' width='10%' src='TC_clicklogin/11.png' data-src='TC_clicklogin/11.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:40:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do you get hotter faster because your black?" in SentenceField<BR><img data-featherlight='TC_clicklogin/12.png' width='10%' src='TC_clicklogin/12.png' data-src='TC_clicklogin/12.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:41:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "When you tan do you get darker?'" in SentenceField<BR><img data-featherlight='TC_clicklogin/13.png' width='10%' src='TC_clicklogin/13.png' data-src='TC_clicklogin/13.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:41:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You're the smartest black person I know" in SentenceField<BR><img data-featherlight='TC_clicklogin/14.png' width='10%' src='TC_clicklogin/14.png' data-src='TC_clicklogin/14.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:42:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Shouldn't you listen to rap music?" in SentenceField<BR><img data-featherlight='TC_clicklogin/15.png' width='10%' src='TC_clicklogin/15.png' data-src='TC_clicklogin/15.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:43:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm not racist, my cousin is black." in SentenceField<BR><img data-featherlight='TC_clicklogin/16.png' width='10%' src='TC_clicklogin/16.png' data-src='TC_clicklogin/16.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:44:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "39. Why can’t black people swim?" in SentenceField<BR><img data-featherlight='TC_clicklogin/17.png' width='10%' src='TC_clicklogin/17.png' data-src='TC_clicklogin/17.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:44:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "40. Have you been to jail, even for a little while?" in SentenceField<BR><img data-featherlight='TC_clicklogin/18.png' width='10%' src='TC_clicklogin/18.png' data-src='TC_clicklogin/18.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:45:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "48. I think black people are really cool. (All black people, everywhere?)." in SentenceField<BR><img data-featherlight='TC_clicklogin/19.png' width='10%' src='TC_clicklogin/19.png' data-src='TC_clicklogin/19.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:46:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "49. I don’t see colour." in SentenceField<BR><img data-featherlight='TC_clicklogin/20.png' width='10%' src='TC_clicklogin/20.png' data-src='TC_clicklogin/20.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:46:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He should be lynched" in SentenceField<BR><img data-featherlight='TC_clicklogin/21.png' width='10%' src='TC_clicklogin/21.png' data-src='TC_clicklogin/21.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:47:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "50. Why do “black Lives Matter” – don’t all lives matter? (Are all lives undervalued?)" in SentenceField<BR><img data-featherlight='TC_clicklogin/22.png' width='10%' src='TC_clicklogin/22.png' data-src='TC_clicklogin/22.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:48:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "slavery has benefited descendants like me—I believe there is a superior athletic gene in us" in SentenceField<BR><img data-featherlight='TC_clicklogin/23.png' width='10%' src='TC_clicklogin/23.png' data-src='TC_clicklogin/23.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:48:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Slavery was not all bad" in SentenceField<BR><img data-featherlight='TC_clicklogin/24.png' width='10%' src='TC_clicklogin/24.png' data-src='TC_clicklogin/24.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:49:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "tell him not to serve" in SentenceField<BR><img data-featherlight='TC_clicklogin/25.png' width='10%' src='TC_clicklogin/25.png' data-src='TC_clicklogin/25.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:50:24 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "fried chicken next year. Got it? Or collard greens or whatever the hell they serve."" in SentenceField<BR><img data-featherlight='TC_clicklogin/26.png' width='10%' src='TC_clicklogin/26.png' data-src='TC_clicklogin/26.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "black churches and synagogues as part of a race and hate war" in SentenceField<BR><img data-featherlight='TC_clicklogin/27.png' width='10%' src='TC_clicklogin/27.png' data-src='TC_clicklogin/27.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:51:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I am not responsible for what my ancestors did" in SentenceField<BR><img data-featherlight='TC_clicklogin/28.png' width='10%' src='TC_clicklogin/28.png' data-src='TC_clicklogin/28.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:52:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "you all switch your hair up too much." in SentenceField<BR><img data-featherlight='TC_clicklogin/29.png' width='10%' src='TC_clicklogin/29.png' data-src='TC_clicklogin/29.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:53:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "! I didn’t recognize you with your new hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/30.png' width='10%' src='TC_clicklogin/30.png' data-src='TC_clicklogin/30.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:53:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "With so many changes, won't your hair fall out?" in SentenceField<BR><img data-featherlight='TC_clicklogin/31.png' width='10%' src='TC_clicklogin/31.png' data-src='TC_clicklogin/31.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:54:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Wait, where's your hair?" in SentenceField<BR><img data-featherlight='TC_clicklogin/32.png' width='10%' src='TC_clicklogin/32.png' data-src='TC_clicklogin/32.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:55:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "She has a new hair every other day, I dont think it is professional" in SentenceField<BR><img data-featherlight='TC_clicklogin/33.png' width='10%' src='TC_clicklogin/33.png' data-src='TC_clicklogin/33.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:56:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't straighten your hair; it's too boring and not big and fun like your curls." in SentenceField<BR><img data-featherlight='TC_clicklogin/34.png' width='10%' src='TC_clicklogin/34.png' data-src='TC_clicklogin/34.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:56:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Textured hair is less professional than smooth hair." in SentenceField<BR><img data-featherlight='TC_clicklogin/35.png' width='10%' src='TC_clicklogin/35.png' data-src='TC_clicklogin/35.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:57:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I din't didn’t realise you had so much hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/36.png' width='10%' src='TC_clicklogin/36.png' data-src='TC_clicklogin/36.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:58:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We think dreadlocks are unprofessional" in SentenceField<BR><img data-featherlight='TC_clicklogin/37.png' width='10%' src='TC_clicklogin/37.png' data-src='TC_clicklogin/37.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:58:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You really have good hair for a black person" in SentenceField<BR><img data-featherlight='TC_clicklogin/38.png' width='10%' src='TC_clicklogin/38.png' data-src='TC_clicklogin/38.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>8:59:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "African hair as closer to sheep wool than human hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/39.png' width='10%' src='TC_clicklogin/39.png' data-src='TC_clicklogin/39.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:00:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Straighten your hair and try to be presentable" in SentenceField<BR><img data-featherlight='TC_clicklogin/40.png' width='10%' src='TC_clicklogin/40.png' data-src='TC_clicklogin/40.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:01:01 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Black women have such distracting hairstyles" in SentenceField<BR><img data-featherlight='TC_clicklogin/41.png' width='10%' src='TC_clicklogin/41.png' data-src='TC_clicklogin/41.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:01:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Dreadlocks look unkempt and matted" in SentenceField<BR><img data-featherlight='TC_clicklogin/42.png' width='10%' src='TC_clicklogin/42.png' data-src='TC_clicklogin/42.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:02:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "They should ban dreadlocks, cornrows and twists at work" in SentenceField<BR><img data-featherlight='TC_clicklogin/43.png' width='10%' src='TC_clicklogin/43.png' data-src='TC_clicklogin/43.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:03:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are discouraged from sporting dreadlocks, cornrows or other unprofessional hairstyles" in SentenceField<BR><img data-featherlight='TC_clicklogin/44.png' width='10%' src='TC_clicklogin/44.png' data-src='TC_clicklogin/44.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:03:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You Should Wear Your Hair Natural More" in SentenceField<BR><img data-featherlight='TC_clicklogin/45.png' width='10%' src='TC_clicklogin/45.png' data-src='TC_clicklogin/45.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:04:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are suppressing your culture by straightening your hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/46.png' width='10%' src='TC_clicklogin/46.png' data-src='TC_clicklogin/46.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Black hair is unkept and unruly when natural," in SentenceField<BR><img data-featherlight='TC_clicklogin/47.png' width='10%' src='TC_clicklogin/47.png' data-src='TC_clicklogin/47.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:05:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You know all that wigs, weaves chemical straightening and braids are not good for your hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/48.png' width='10%' src='TC_clicklogin/48.png' data-src='TC_clicklogin/48.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:06:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I feel like you change your hair more than anyone I know" in SentenceField<BR><img data-featherlight='TC_clicklogin/49.png' width='10%' src='TC_clicklogin/49.png' data-src='TC_clicklogin/49.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:07:24 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So how do you wash your hair?" in SentenceField<BR><img data-featherlight='TC_clicklogin/50.png' width='10%' src='TC_clicklogin/50.png' data-src='TC_clicklogin/50.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You know I have a dreadlock fetish" in SentenceField<BR><img data-featherlight='TC_clicklogin/51.png' width='10%' src='TC_clicklogin/51.png' data-src='TC_clicklogin/51.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:08:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Wow, all that weave, doesn't it get in the way?" in SentenceField<BR><img data-featherlight='TC_clicklogin/52.png' width='10%' src='TC_clicklogin/52.png' data-src='TC_clicklogin/52.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:09:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do you white folks always eat out of cans and microwave food?" in SentenceField<BR><img data-featherlight='TC_clicklogin/53.png' width='10%' src='TC_clicklogin/53.png' data-src='TC_clicklogin/53.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:10:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Have you got any weed" in SentenceField<BR><img data-featherlight='TC_clicklogin/54.png' width='10%' src='TC_clicklogin/54.png' data-src='TC_clicklogin/54.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:10:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are the whitest black person I know" in SentenceField<BR><img data-featherlight='TC_clicklogin/55.png' width='10%' src='TC_clicklogin/55.png' data-src='TC_clicklogin/55.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:11:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why do black people wear du-rags" in SentenceField<BR><img data-featherlight='TC_clicklogin/56.png' width='10%' src='TC_clicklogin/56.png' data-src='TC_clicklogin/56.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:12:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "How do black people get those circles in their hair" in SentenceField<BR><img data-featherlight='TC_clicklogin/57.png' width='10%' src='TC_clicklogin/57.png' data-src='TC_clicklogin/57.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:03 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you rap?" in SentenceField<BR><img data-featherlight='TC_clicklogin/58.png' width='10%' src='TC_clicklogin/58.png' data-src='TC_clicklogin/58.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:13:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you freestyle?" in SentenceField<BR><img data-featherlight='TC_clicklogin/59.png' width='10%' src='TC_clicklogin/59.png' data-src='TC_clicklogin/59.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:14:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Scholarships should not be based on race there are poor white people too" in SentenceField<BR><img data-featherlight='TC_clicklogin/60.png' width='10%' src='TC_clicklogin/60.png' data-src='TC_clicklogin/60.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:15:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Can you teach me how to twerk?" in SentenceField<BR><img data-featherlight='TC_clicklogin/61.png' width='10%' src='TC_clicklogin/61.png' data-src='TC_clicklogin/61.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:15:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You must know how to twerk." in SentenceField<BR><img data-featherlight='TC_clicklogin/62.png' width='10%' src='TC_clicklogin/62.png' data-src='TC_clicklogin/62.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:16:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I have alway swanted to date a black girl" in SentenceField<BR><img data-featherlight='TC_clicklogin/63.png' width='10%' src='TC_clicklogin/63.png' data-src='TC_clicklogin/63.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:17:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He hair is really nappy" in SentenceField<BR><img data-featherlight='TC_clicklogin/64.png' width='10%' src='TC_clicklogin/64.png' data-src='TC_clicklogin/64.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:17:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Affirmative action is reverse racism" in SentenceField<BR><img data-featherlight='TC_clicklogin/65.png' width='10%' src='TC_clicklogin/65.png' data-src='TC_clicklogin/65.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:18:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You must drink Kool aid all the time huh" in SentenceField<BR><img data-featherlight='TC_clicklogin/66.png' width='10%' src='TC_clicklogin/66.png' data-src='TC_clicklogin/66.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:19:24 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why isnt there a white history month" in SentenceField<BR><img data-featherlight='TC_clicklogin/67.png' width='10%' src='TC_clicklogin/67.png' data-src='TC_clicklogin/67.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So do you go to like one of those black churches?" in SentenceField<BR><img data-featherlight='TC_clicklogin/68.png' width='10%' src='TC_clicklogin/68.png' data-src='TC_clicklogin/68.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:20:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "why do black people tap their cornrows?" in SentenceField<BR><img data-featherlight='TC_clicklogin/69.png' width='10%' src='TC_clicklogin/69.png' data-src='TC_clicklogin/69.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:21:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do tattoos show up on black people?" in SentenceField<BR><img data-featherlight='TC_clicklogin/70.png' width='10%' src='TC_clicklogin/70.png' data-src='TC_clicklogin/70.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why do black people like Tyler Perry movies?" in SentenceField<BR><img data-featherlight='TC_clicklogin/71.png' width='10%' src='TC_clicklogin/71.png' data-src='TC_clicklogin/71.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:22:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are so lucky to have a tan" in SentenceField<BR><img data-featherlight='TC_clicklogin/72.png' width='10%' src='TC_clicklogin/72.png' data-src='TC_clicklogin/72.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:23:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Black people are such good athletes" in SentenceField<BR><img data-featherlight='TC_clicklogin/73.png' width='10%' src='TC_clicklogin/73.png' data-src='TC_clicklogin/73.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:24:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Alright sister!" in SentenceField<BR><img data-featherlight='TC_clicklogin/74.png' width='10%' src='TC_clicklogin/74.png' data-src='TC_clicklogin/74.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:25:03 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I wish I had curves like a black girl" in SentenceField<BR><img data-featherlight='TC_clicklogin/75.png' width='10%' src='TC_clicklogin/75.png' data-src='TC_clicklogin/75.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:25:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Slavery happened so long ago, how are today's white people responsible for that" in SentenceField<BR><img data-featherlight='TC_clicklogin/76.png' width='10%' src='TC_clicklogin/76.png' data-src='TC_clicklogin/76.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:26:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Sorry I was born white" in SentenceField<BR><img data-featherlight='TC_clicklogin/77.png' width='10%' src='TC_clicklogin/77.png' data-src='TC_clicklogin/77.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are not like regular black girl" in SentenceField<BR><img data-featherlight='TC_clicklogin/78.png' width='10%' src='TC_clicklogin/78.png' data-src='TC_clicklogin/78.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:27:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you celebrate Kwaanza" in SentenceField<BR><img data-featherlight='TC_clicklogin/79.png' width='10%' src='TC_clicklogin/79.png' data-src='TC_clicklogin/79.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:28:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Can you get sunburned?" in SentenceField<BR><img data-featherlight='TC_clicklogin/80.png' width='10%' src='TC_clicklogin/80.png' data-src='TC_clicklogin/80.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:29:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Is it true what they say about black guys?" in SentenceField<BR><img data-featherlight='TC_clicklogin/81.png' width='10%' src='TC_clicklogin/81.png' data-src='TC_clicklogin/81.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "What does yeet mean" in SentenceField<BR><img data-featherlight='TC_clicklogin/82.png' width='10%' src='TC_clicklogin/82.png' data-src='TC_clicklogin/82.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:30:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "What does thot mean" in SentenceField<BR><img data-featherlight='TC_clicklogin/83.png' width='10%' src='TC_clicklogin/83.png' data-src='TC_clicklogin/83.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:31:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Black people are more racist than white people" in SentenceField<BR><img data-featherlight='TC_clicklogin/84.png' width='10%' src='TC_clicklogin/84.png' data-src='TC_clicklogin/84.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:32:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We can’t attract or keep black employees, it’s like they don’t wanna work." in SentenceField<BR><img data-featherlight='TC_clicklogin/85.png' width='10%' src='TC_clicklogin/85.png' data-src='TC_clicklogin/85.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:32:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I’m SO sorry, you don't look like you work here." in SentenceField<BR><img data-featherlight='TC_clicklogin/86.png' width='10%' src='TC_clicklogin/86.png' data-src='TC_clicklogin/86.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:33:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I’m SO sorry, you didn't look like you work here." in SentenceField<BR><img data-featherlight='TC_clicklogin/87.png' width='10%' src='TC_clicklogin/87.png' data-src='TC_clicklogin/87.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I love your hair straight; it looks so much more professional." in SentenceField<BR><img data-featherlight='TC_clicklogin/88.png' width='10%' src='TC_clicklogin/88.png' data-src='TC_clicklogin/88.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:34:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "23. We’ll address it, but just be careful not to play the ‘Race Card’." in SentenceField<BR><img data-featherlight='TC_clicklogin/89.png' width='10%' src='TC_clicklogin/89.png' data-src='TC_clicklogin/89.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:35:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "24. I like you! You’re surprisingly professional." in SentenceField<BR><img data-featherlight='TC_clicklogin/90.png' width='10%' src='TC_clicklogin/90.png' data-src='TC_clicklogin/90.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:36:24 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "25. You could definitely pass as one of ‘us’." in SentenceField<BR><img data-featherlight='TC_clicklogin/91.png' width='10%' src='TC_clicklogin/91.png' data-src='TC_clicklogin/91.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:37:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "27. Do you have a Mum AND a Dad?" in SentenceField<BR><img data-featherlight='TC_clicklogin/92.png' width='10%' src='TC_clicklogin/92.png' data-src='TC_clicklogin/92.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:37:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "30. Do you snack on dry bones?" in SentenceField<BR><img data-featherlight='TC_clicklogin/93.png' width='10%' src='TC_clicklogin/93.png' data-src='TC_clicklogin/93.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:38:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "31. Where are you really from?" in SentenceField<BR><img data-featherlight='TC_clicklogin/94.png' width='10%' src='TC_clicklogin/94.png' data-src='TC_clicklogin/94.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "32. Can black people really be Muslim?" in SentenceField<BR><img data-featherlight='TC_clicklogin/95.png' width='10%' src='TC_clicklogin/95.png' data-src='TC_clicklogin/95.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:39:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "our name is too hard to pronounce, so I’m going to call you X" in SentenceField<BR><img data-featherlight='TC_clicklogin/96.png' width='10%' src='TC_clicklogin/96.png' data-src='TC_clicklogin/96.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:40:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "38. Do you have any weed?" in SentenceField<BR><img data-featherlight='TC_clicklogin/97.png' width='10%' src='TC_clicklogin/97.png' data-src='TC_clicklogin/97.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:41:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He's what is known in some schools as a fucking lazy black." in SentenceField<BR><img data-featherlight='TC_clicklogin/98.png' width='10%' src='TC_clicklogin/98.png' data-src='TC_clicklogin/98.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>9:42:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "" in SentenceField<BR><img data-featherlight='TC_clicklogin/99.png' width='10%' src='TC_clicklogin/99.png' data-src='TC_clicklogin/99.png'></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'><details><summary><b><font color=red>Exception Occured:Click to see</font></b ></summary>[java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br> java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br> java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br> java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)<br> org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)<br> org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)<br> org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)<br> org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)<br> org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br> org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)<br> org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)<br> org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)<br> jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:566)<br> org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.lambda$new$0(EventFiringWebDriver.java:404)<br> com.sun.proxy.$Proxy22.click(Unknown Source)<br> org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click(EventFiringWebDriver.java:417)<br> jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:566)<br> org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)<br> com.sun.proxy.$Proxy21.click(Unknown Source)<br> com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:168)<br> com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:566)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1541)<br> org.testng.TestRunner.privateRun(TestRunner.java:766)<br> org.testng.TestRunner.run(TestRunner.java:587)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:384)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)<br> org.testng.SuiteRunner.run(SuiteRunner.java:286)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1109)<br> org.testng.TestNG.runSuites(TestNG.java:1039)<br> org.testng.TestNG.run(TestNG.java:1007)<br> com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br> com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)]</details></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'><span class='label white-text red'>clicklogin FAILED </span></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'><textarea>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button data-testid="create-copy" type="submit" class="w-full justify-center mt-0 md:mt-10 !mt-4
+        flex items-center font-medium rounded text-xs py-3 focus:outline-none bg-purple-800 text-white
+        bg-opacity-40 text-opacity-80 pointer-events-none
+        px-5
+      ">...</button> is not clickable at point (795, 480). Other element would receive the click: <div class="flex flex-col items-center">...</div>
+  (Session info: chrome=99.0.4844.51)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ttnpl', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-104-generic', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: /tmp/.com.google.Chrome.TUy9HJ}, goog:chromeOptions: {debuggerAddress: localhost:43051}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 699478b9995e74cc80ede03a847751d9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.lambda$new$0(EventFiringWebDriver.java:404)
+	at com.sun.proxy.$Proxy22.click(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click(EventFiringWebDriver.java:417)
+	at jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:168)
+	at com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea><img data-featherlight='TC_clicklogin/fail.png' width='10%' src='TC_clicklogin/fail.png' data-src='TC_clicklogin/fail.png'></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'>ElementClickInterceptedException</td>
+												</tr>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'>Test Completed</td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'><span class='label white-text red'>clicklogin - Test Case Failed</span></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>9:42:05 PM</td>
+													<td class='step-details'><span class='label white-text red'>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button data-testid="create-copy" type="submit" class="w-full justify-center mt-0 md:mt-10 !mt-4
+        flex items-center font-medium rounded text-xs py-3 focus:outline-none bg-purple-800 text-white
+        bg-opacity-40 text-opacity-80 pointer-events-none
+        px-5
+      ">...</button> is not clickable at point (795, 480). Other element would receive the click: <div class="flex flex-col items-center">...</div>
+  (Session info: chrome=99.0.4844.51)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ttnpl', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-104-generic', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: /tmp/.com.google.Chrome.TUy9HJ}, goog:chromeOptions: {debuggerAddress: localhost:43051}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 699478b9995e74cc80ede03a847751d9 - Test Case Failed</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.ElementClickInterceptedException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Mar 15, 2022 20:31:04</td>
+                                                        <td class='linked' test-id='3'>Running on Chrome.<b><font color=blue>test</font></b >.clicklogin</td>
+                                                        <td><pre><textarea>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button data-testid="create-copy" type="submit" class="w-full justify-center mt-0 md:mt-10 !mt-4
+        flex items-center font-medium rounded text-xs py-3 focus:outline-none bg-purple-800 text-white
+        bg-opacity-40 text-opacity-80 pointer-events-none
+        px-5
+      ">...</button> is not clickable at point (795, 480). Other element would receive the click: <div class="flex flex-col items-center">...</div>
+  (Session info: chrome=99.0.4844.51)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ttnpl', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-104-generic', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 98.0.4758.102 (273bf7ac8c90..., userDataDir: /tmp/.com.google.Chrome.TUy9HJ}, goog:chromeOptions: {debuggerAddress: localhost:43051}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 699478b9995e74cc80ede03a847751d9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.lambda$new$0(EventFiringWebDriver.java:404)
+	at com.sun.proxy.$Proxy22.click(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click(EventFiringWebDriver.java:417)
+	at jdk.internal.reflect.GeneratedMethodAccessor6.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy21.click(Unknown Source)
+	at com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:168)
+	at com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>106</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 15, 2022 20:30:56</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 15, 2022 21:42:06</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>4,270,587ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>uat</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Linux</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 0,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 0,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 1,
+				
+				passGrandChild: 99,
+				failGrandChild: 6,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 1,
+				exceptionsGrandChild: 6,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			js-string
+ 		</script>
+	</body>
+	
+</html>

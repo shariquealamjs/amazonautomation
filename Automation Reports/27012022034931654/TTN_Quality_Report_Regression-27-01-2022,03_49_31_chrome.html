@@ -1,0 +1,1023 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Demo Test Automation Report</title>
+
+	<style type='text/css'>
+		css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Demo Test Automation Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jan 27, 2022 15:49:31</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='93.458%'><span class='strong'>100</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.607%'>6</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0.935%'>1</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Running on Chrome</span>
+						<span class='test-time'>Jan 27, 2022 15:49:31</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 27, 2022 15:49:31</span>
+	<span class='label end-time'>Jan 27, 2022 16:24:51</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 35m 19s+687ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1  fail' status='fail' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'><b><font color=blue>test</font></b ></div>						
+						<span class='node-time'>Jan 27, 2022 15:49:31</span>
+						<span class='node-duration'>0h 35m 19s+674ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf fail' status='fail' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>clicklogin</div>						
+						<span class='node-time'>Jan 27, 2022 15:49:37</span>
+						<span class='node-duration'>0h 35m 13s+819ms</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:51:43 PM</td>
+													<td class='step-details'><b>pressKey</b><BR>TAB key pressed<BR><img data-featherlight='TC_clicklogin/1.png' width='10%' src='TC_clicklogin/1.png' data-src='TC_clicklogin/1.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:51:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "he told us that he only dates Jewish women of a certain body type and Christian women who are ""right wing.""" in SentenceField<BR><img data-featherlight='TC_clicklogin/2.png' width='10%' src='TC_clicklogin/2.png' data-src='TC_clicklogin/2.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:52:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I asked the question "Are there really millions of people who hate pretty women?" to their entire class" in SentenceField<BR><img data-featherlight='TC_clicklogin/3.png' width='10%' src='TC_clicklogin/3.png' data-src='TC_clicklogin/3.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:52:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He’s likely been labeled as an anti-feminist or, at the very least, an Alpha douchebag" in SentenceField<BR><img data-featherlight='TC_clicklogin/4.png' width='10%' src='TC_clicklogin/4.png' data-src='TC_clicklogin/4.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:52:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "don't you know that The “nice guy” comes to the table of dating with his own set of complaints" in SentenceField<BR><img data-featherlight='TC_clicklogin/5.png' width='10%' src='TC_clicklogin/5.png' data-src='TC_clicklogin/5.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I have to say that most of These are usually seen through the haze of self-pity and rationalized as a justified reaction by some sort of wrongdoing on the part of women in general." in SentenceField<BR><img data-featherlight='TC_clicklogin/6.png' width='10%' src='TC_clicklogin/6.png' data-src='TC_clicklogin/6.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "he swore to me that no longer dates “hot women” and their “unrealistic expectations”." in SentenceField<BR><img data-featherlight='TC_clicklogin/7.png' width='10%' src='TC_clicklogin/7.png' data-src='TC_clicklogin/7.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "dating ""hot women"" made him feel insecure about himself" in SentenceField<BR><img data-featherlight='TC_clicklogin/8.png' width='10%' src='TC_clicklogin/8.png' data-src='TC_clicklogin/8.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:54:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "did you hear that he now only chooses to date ""average looking"" women who feel grateful for the attention they get from him" in SentenceField<BR><img data-featherlight='TC_clicklogin/9.png' width='10%' src='TC_clicklogin/9.png' data-src='TC_clicklogin/9.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:54:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Many women are outraged and offended after hearing a man’s opinion about women who are considered beautiful." in SentenceField<BR><img data-featherlight='TC_clicklogin/10.png' width='10%' src='TC_clicklogin/10.png' data-src='TC_clicklogin/10.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:54:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "What kind of things do women say that instantly turn you off on a date?" in SentenceField<BR><img data-featherlight='TC_clicklogin/11.png' width='10%' src='TC_clicklogin/11.png' data-src='TC_clicklogin/11.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:55:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do you know that More accidents happened in work place where female firefighters and miners were employed, this shows how these jobs are unsuitable for women" in SentenceField<BR><img data-featherlight='TC_clicklogin/12.png' width='10%' src='TC_clicklogin/12.png' data-src='TC_clicklogin/12.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:55:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I find it not surprising and predictable for people because what is considered to be a masculine activity" in SentenceField<BR><img data-featherlight='TC_clicklogin/13.png' width='10%' src='TC_clicklogin/13.png' data-src='TC_clicklogin/13.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:55:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You may have heard more accidents are reported when women get involved in mining or working at a fire station" in SentenceField<BR><img data-featherlight='TC_clicklogin/14.png' width='10%' src='TC_clicklogin/14.png' data-src='TC_clicklogin/14.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:56:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do you think women are dangerous?" in SentenceField<BR><img data-featherlight='TC_clicklogin/15.png' width='10%' src='TC_clicklogin/15.png' data-src='TC_clicklogin/15.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:56:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I often wonder are women fit for certain types of jobs?" in SentenceField<BR><img data-featherlight='TC_clicklogin/16.png' width='10%' src='TC_clicklogin/16.png' data-src='TC_clicklogin/16.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:56:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "more accidents were reported in the case of female firefighters and miners" in SentenceField<BR><img data-featherlight='TC_clicklogin/17.png' width='10%' src='TC_clicklogin/17.png' data-src='TC_clicklogin/17.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:57:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "don't you feel that just like in every other profession, there are certain jobs that female firefighters, miners and construction workers shouldn’t do." in SentenceField<BR><img data-featherlight='TC_clicklogin/18.png' width='10%' src='TC_clicklogin/18.png' data-src='TC_clicklogin/18.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:57:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "When it comes to professions dominated by men, firefighting, mining and other such jobs come to mind." in SentenceField<BR><img data-featherlight='TC_clicklogin/19.png' width='10%' src='TC_clicklogin/19.png' data-src='TC_clicklogin/19.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:57:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "women working in such professions might face more accidents due to their own carelessness or the less-hardy constitution." in SentenceField<BR><img data-featherlight='TC_clicklogin/20.png' width='10%' src='TC_clicklogin/20.png' data-src='TC_clicklogin/20.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "allowing them to serve alongside men was not only dangerous but would make their male counterparts unsafe." in SentenceField<BR><img data-featherlight='TC_clicklogin/21.png' width='10%' src='TC_clicklogin/21.png' data-src='TC_clicklogin/21.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "women would have an opportunity to get a job no matter if she was incompetent or not, and everyone agrees on this fact." in SentenceField<BR><img data-featherlight='TC_clicklogin/22.png' width='10%' src='TC_clicklogin/22.png' data-src='TC_clicklogin/22.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "why are all the jobs for women deemed dangerous?"" in SentenceField<BR><img data-featherlight='TC_clicklogin/23.png' width='10%' src='TC_clicklogin/23.png' data-src='TC_clicklogin/23.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:59:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "To help you impress the females, here’s a list of material things women want." in SentenceField<BR><img data-featherlight='TC_clicklogin/24.png' width='10%' src='TC_clicklogin/24.png' data-src='TC_clicklogin/24.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:59:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "i have always noticed that Women always seem to be on the lookout for material things" in SentenceField<BR><img data-featherlight='TC_clicklogin/25.png' width='10%' src='TC_clicklogin/25.png' data-src='TC_clicklogin/25.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:59:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "most women are trying to look younger." in SentenceField<BR><img data-featherlight='TC_clicklogin/26.png' width='10%' src='TC_clicklogin/26.png' data-src='TC_clicklogin/26.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:00:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I always wonder why do women skincare users go to such great lengths to look younger?" in SentenceField<BR><img data-featherlight='TC_clicklogin/27.png' width='10%' src='TC_clicklogin/27.png' data-src='TC_clicklogin/27.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:00:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The younger you look and the more likely you're going to be taken seriously and promoted at work, right?" in SentenceField<BR><img data-featherlight='TC_clicklogin/28.png' width='10%' src='TC_clicklogin/28.png' data-src='TC_clicklogin/28.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:00:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Dont't you think the women are getting older." in SentenceField<BR><img data-featherlight='TC_clicklogin/29.png' width='10%' src='TC_clicklogin/29.png' data-src='TC_clicklogin/29.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:12 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "the most common concerns amongst women are wrinkles, age spots and in some cases sagging." in SentenceField<BR><img data-featherlight='TC_clicklogin/30.png' width='10%' src='TC_clicklogin/30.png' data-src='TC_clicklogin/30.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think that Vanity is feminine." in SentenceField<BR><img data-featherlight='TC_clicklogin/31.png' width='10%' src='TC_clicklogin/31.png' data-src='TC_clicklogin/31.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I strongly believe that To be feminine is to be vain and to be vain is to be feminine" in SentenceField<BR><img data-featherlight='TC_clicklogin/32.png' width='10%' src='TC_clicklogin/32.png' data-src='TC_clicklogin/32.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't you thinnk that Women are driven to buy themselves clothes, jewelry, and beauty products" in SentenceField<BR><img data-featherlight='TC_clicklogin/33.png' width='10%' src='TC_clicklogin/33.png' data-src='TC_clicklogin/33.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "being vain is beneficial to women by making them more attractive to men" in SentenceField<BR><img data-featherlight='TC_clicklogin/34.png' width='10%' src='TC_clicklogin/34.png' data-src='TC_clicklogin/34.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "There's a saying that says ""men are dogs"", but I'm not so sure, they maybe worse." in SentenceField<BR><img data-featherlight='TC_clicklogin/35.png' width='10%' src='TC_clicklogin/35.png' data-src='TC_clicklogin/35.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:03:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "When was the last time you met a man who was vain?" in SentenceField<BR><img data-featherlight='TC_clicklogin/36.png' width='10%' src='TC_clicklogin/36.png' data-src='TC_clicklogin/36.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:03:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "When it comes to being vain I don’t think males come to mind very often" in SentenceField<BR><img data-featherlight='TC_clicklogin/37.png' width='10%' src='TC_clicklogin/37.png' data-src='TC_clicklogin/37.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:03:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think the only and most active power of the female mind is vanity." in SentenceField<BR><img data-featherlight='TC_clicklogin/38.png' width='10%' src='TC_clicklogin/38.png' data-src='TC_clicklogin/38.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I mean she is the proof that women like bad boys and celebrities." in SentenceField<BR><img data-featherlight='TC_clicklogin/39.png' width='10%' src='TC_clicklogin/39.png' data-src='TC_clicklogin/39.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why do women prefer men who are rich or powerful over good looking men?" in SentenceField<BR><img data-featherlight='TC_clicklogin/40.png' width='10%' src='TC_clicklogin/40.png' data-src='TC_clicklogin/40.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In my experience money is the key to a woman's happiness," in SentenceField<BR><img data-featherlight='TC_clicklogin/41.png' width='10%' src='TC_clicklogin/41.png' data-src='TC_clicklogin/41.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:05:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "money can make any woman do the craziest things." in SentenceField<BR><img data-featherlight='TC_clicklogin/42.png' width='10%' src='TC_clicklogin/42.png' data-src='TC_clicklogin/42.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:05:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't you know it's a well known fact that women judge men within seconds of seeing them" in SentenceField<BR><img data-featherlight='TC_clicklogin/43.png' width='10%' src='TC_clicklogin/43.png' data-src='TC_clicklogin/43.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:05:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In my opinion, sports like shooting and weightlifting are practically boy's club, not for a woman for sure." in SentenceField<BR><img data-featherlight='TC_clicklogin/44.png' width='10%' src='TC_clicklogin/44.png' data-src='TC_clicklogin/44.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:06:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "there are certain sports that are just not for women, especially tennis and also golf should be avoided by women." in SentenceField<BR><img data-featherlight='TC_clicklogin/45.png' width='10%' src='TC_clicklogin/45.png' data-src='TC_clicklogin/45.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:06:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "maybe you as a woman shouldn't join us after all" in SentenceField<BR><img data-featherlight='TC_clicklogin/46.png' width='10%' src='TC_clicklogin/46.png' data-src='TC_clicklogin/46.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:06:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think women belong in the home, in their proper role of building stable families with strong marriages and raising children" in SentenceField<BR><img data-featherlight='TC_clicklogin/47.png' width='10%' src='TC_clicklogin/47.png' data-src='TC_clicklogin/47.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:07:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "men prefer to drive rather than ride to a destination while women prefer to ride in a vehicle instead of driving themselves." in SentenceField<BR><img data-featherlight='TC_clicklogin/48.png' width='10%' src='TC_clicklogin/48.png' data-src='TC_clicklogin/48.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:07:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Everyone knows men tend not to spend much thought or effort into what they wear unlike women who spend all of their thought and effort into looking good." in SentenceField<BR><img data-featherlight='TC_clicklogin/49.png' width='10%' src='TC_clicklogin/49.png' data-src='TC_clicklogin/49.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:07:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We men do not know much about shopping for women as women are very picky." in SentenceField<BR><img data-featherlight='TC_clicklogin/50.png' width='10%' src='TC_clicklogin/50.png' data-src='TC_clicklogin/50.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:08:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Let's accept it, women belong in the kitchen" in SentenceField<BR><img data-featherlight='TC_clicklogin/51.png' width='10%' src='TC_clicklogin/51.png' data-src='TC_clicklogin/51.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:08:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "should not be allowed to do jobs like plumbing because it's a man's job." in SentenceField<BR><img data-featherlight='TC_clicklogin/52.png' width='10%' src='TC_clicklogin/52.png' data-src='TC_clicklogin/52.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:08:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm not sexist but women are made for cooking and having babies." in SentenceField<BR><img data-featherlight='TC_clicklogin/53.png' width='10%' src='TC_clicklogin/53.png' data-src='TC_clicklogin/53.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:09:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "My opinion is that modern society isn't ideal for a woman's body," in SentenceField<BR><img data-featherlight='TC_clicklogin/54.png' width='10%' src='TC_clicklogin/54.png' data-src='TC_clicklogin/54.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:09:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "we should go to the traditional ways and act according to one's gender role which for a woman is nurturing and caring." in SentenceField<BR><img data-featherlight='TC_clicklogin/55.png' width='10%' src='TC_clicklogin/55.png' data-src='TC_clicklogin/55.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:09:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "If you didn’t support him, you apparently lacked spine and masculinity." in SentenceField<BR><img data-featherlight='TC_clicklogin/56.png' width='10%' src='TC_clicklogin/56.png' data-src='TC_clicklogin/56.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "less pay is reasonable for women in construction, mining and factory work." in SentenceField<BR><img data-featherlight='TC_clicklogin/57.png' width='10%' src='TC_clicklogin/57.png' data-src='TC_clicklogin/57.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "women are just not that interested in working in construction, mining or factory work" in SentenceField<BR><img data-featherlight='TC_clicklogin/58.png' width='10%' src='TC_clicklogin/58.png' data-src='TC_clicklogin/58.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I don't think there is anything wrong with women earning less than men for doing the same job" in SentenceField<BR><img data-featherlight='TC_clicklogin/59.png' width='10%' src='TC_clicklogin/59.png' data-src='TC_clicklogin/59.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "the natural way is that the the man takes out the trash and the woman does the laundry or cooks a meal for her family." in SentenceField<BR><img data-featherlight='TC_clicklogin/60.png' width='10%' src='TC_clicklogin/60.png' data-src='TC_clicklogin/60.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know that all women want a guy with a nice butt, but only if he doesn't have body odor." in SentenceField<BR><img data-featherlight='TC_clicklogin/61.png' width='10%' src='TC_clicklogin/61.png' data-src='TC_clicklogin/61.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm discussing how every woman falls in love with shoes at least six times a year" in SentenceField<BR><img data-featherlight='TC_clicklogin/62.png' width='10%' src='TC_clicklogin/62.png' data-src='TC_clicklogin/62.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "we better buy these women some shoes." in SentenceField<BR><img data-featherlight='TC_clicklogin/63.png' width='10%' src='TC_clicklogin/63.png' data-src='TC_clicklogin/63.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You can get the attention of any woman with just fashion tips." in SentenceField<BR><img data-featherlight='TC_clicklogin/64.png' width='10%' src='TC_clicklogin/64.png' data-src='TC_clicklogin/64.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I say women are an emotional bunch when it comes to online shopping and don't get me started on their retail therapy." in SentenceField<BR><img data-featherlight='TC_clicklogin/65.png' width='10%' src='TC_clicklogin/65.png' data-src='TC_clicklogin/65.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know that no woman can live without a wardrobe, shoes and purses." in SentenceField<BR><img data-featherlight='TC_clicklogin/66.png' width='10%' src='TC_clicklogin/66.png' data-src='TC_clicklogin/66.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So you are like the women who have ultimate crush on their purses, shoes and bags." in SentenceField<BR><img data-featherlight='TC_clicklogin/67.png' width='10%' src='TC_clicklogin/67.png' data-src='TC_clicklogin/67.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think the one item that women should use to enhance their personality is a perfume." in SentenceField<BR><img data-featherlight='TC_clicklogin/68.png' width='10%' src='TC_clicklogin/68.png' data-src='TC_clicklogin/68.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:14:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you also agree that women love to be pampered and seek attention all the time?" in SentenceField<BR><img data-featherlight='TC_clicklogin/69.png' width='10%' src='TC_clicklogin/69.png' data-src='TC_clicklogin/69.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:14:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He really needs to pay more attention to his looks, personality, style and clothes if he wants to attract women" in SentenceField<BR><img data-featherlight='TC_clicklogin/70.png' width='10%' src='TC_clicklogin/70.png' data-src='TC_clicklogin/70.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:14:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Something is wrong with her because she is always looking to fulfill her fantasies, be it sexual, emotional, or material." in SentenceField<BR><img data-featherlight='TC_clicklogin/71.png' width='10%' src='TC_clicklogin/71.png' data-src='TC_clicklogin/71.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:15:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Your girlfriend is always telling you she wants “nothing”." in SentenceField<BR><img data-featherlight='TC_clicklogin/72.png' width='10%' src='TC_clicklogin/72.png' data-src='TC_clicklogin/72.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:15:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "once you learn tricks like how to romance a woman or how to show her attention or what the best gift for her is, you'll have women fawning over you in no time." in SentenceField<BR><img data-featherlight='TC_clicklogin/73.png' width='10%' src='TC_clicklogin/73.png' data-src='TC_clicklogin/73.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:15:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Just give your woman a gorgeous piece of necklace as an apology and it will be an instant hit." in SentenceField<BR><img data-featherlight='TC_clicklogin/74.png' width='10%' src='TC_clicklogin/74.png' data-src='TC_clicklogin/74.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:16:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Just buy that woman a necklace which she can't resist and she'll keep dating you." in SentenceField<BR><img data-featherlight='TC_clicklogin/75.png' width='10%' src='TC_clicklogin/75.png' data-src='TC_clicklogin/75.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:16:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Did you know that when women are in love, they get all giddy with butterflies" in SentenceField<BR><img data-featherlight='TC_clicklogin/76.png' width='10%' src='TC_clicklogin/76.png' data-src='TC_clicklogin/76.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:16:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The recruiter has specifically mentioned to prefer men for operating a loader as women will probably not be fit for it." in SentenceField<BR><img data-featherlight='TC_clicklogin/77.png' width='10%' src='TC_clicklogin/77.png' data-src='TC_clicklogin/77.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:17:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women don't have the experience or training." in SentenceField<BR><img data-featherlight='TC_clicklogin/78.png' width='10%' src='TC_clicklogin/78.png' data-src='TC_clicklogin/78.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:17:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I wouldn't want my wife driving one of those cars." in SentenceField<BR><img data-featherlight='TC_clicklogin/79.png' width='10%' src='TC_clicklogin/79.png' data-src='TC_clicklogin/79.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:17:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You must be crazy to think women are as safe drivers as men!" in SentenceField<BR><img data-featherlight='TC_clicklogin/80.png' width='10%' src='TC_clicklogin/80.png' data-src='TC_clicklogin/80.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:18:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "She must stick to her female frivolities since women and power tools don't mix." in SentenceField<BR><img data-featherlight='TC_clicklogin/81.png' width='10%' src='TC_clicklogin/81.png' data-src='TC_clicklogin/81.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:18:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You don't need to worry about the female employees because women can be easily overpowered." in SentenceField<BR><img data-featherlight='TC_clicklogin/82.png' width='10%' src='TC_clicklogin/82.png' data-src='TC_clicklogin/82.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:18:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I wouldn't let women from my family go out as the streets are no place for a woman." in SentenceField<BR><img data-featherlight='TC_clicklogin/83.png' width='10%' src='TC_clicklogin/83.png' data-src='TC_clicklogin/83.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:19:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think it is that ninety-five percent of most women are powerless over their environment" in SentenceField<BR><img data-featherlight='TC_clicklogin/84.png' width='10%' src='TC_clicklogin/84.png' data-src='TC_clicklogin/84.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:19:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "never trust women as their ways are always full of deceit and perfidy" in SentenceField<BR><img data-featherlight='TC_clicklogin/85.png' width='10%' src='TC_clicklogin/85.png' data-src='TC_clicklogin/85.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:19:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I like women who want men who can protect them and make them feel safe, not those fake feminists." in SentenceField<BR><img data-featherlight='TC_clicklogin/86.png' width='10%' src='TC_clicklogin/86.png' data-src='TC_clicklogin/86.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:20:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It’s no big secret that women love a man who can protect them" in SentenceField<BR><img data-featherlight='TC_clicklogin/87.png' width='10%' src='TC_clicklogin/87.png' data-src='TC_clicklogin/87.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:20:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So if you want to be the guy that women are constantly trying to win over, then learn how to defend yourself." in SentenceField<BR><img data-featherlight='TC_clicklogin/88.png' width='10%' src='TC_clicklogin/88.png' data-src='TC_clicklogin/88.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:20:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Unless you’re five years old, chances are you can defend her if need be ?" in SentenceField<BR><img data-featherlight='TC_clicklogin/89.png' width='10%' src='TC_clicklogin/89.png' data-src='TC_clicklogin/89.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:21:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think women prefer the 'never speak' type because they never shut up themselves." in SentenceField<BR><img data-featherlight='TC_clicklogin/90.png' width='10%' src='TC_clicklogin/90.png' data-src='TC_clicklogin/90.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:21:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know she is supposed to be smart but the best and most beautiful thing about this woman I'm seeing is her smile." in SentenceField<BR><img data-featherlight='TC_clicklogin/91.png' width='10%' src='TC_clicklogin/91.png' data-src='TC_clicklogin/91.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:21:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do not rely on a woman to fight bad guys all by herself." in SentenceField<BR><img data-featherlight='TC_clicklogin/92.png' width='10%' src='TC_clicklogin/92.png' data-src='TC_clicklogin/92.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:22:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women like men who can protect them, even though we don’t want to admit it" in SentenceField<BR><img data-featherlight='TC_clicklogin/93.png' width='10%' src='TC_clicklogin/93.png' data-src='TC_clicklogin/93.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:22:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You don't have to behave any different than men who kept women as their 'property' in order to protect and provide for them." in SentenceField<BR><img data-featherlight='TC_clicklogin/94.png' width='10%' src='TC_clicklogin/94.png' data-src='TC_clicklogin/94.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:22:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hey, can you smell this and give your female opinion because this study found that women are better smellers than men and more sensitive to smells" in SentenceField<BR><img data-featherlight='TC_clicklogin/95.png' width='10%' src='TC_clicklogin/95.png' data-src='TC_clicklogin/95.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:23:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm glad that the fact that men have sought to protect their women since time immemorial has still not changed." in SentenceField<BR><img data-featherlight='TC_clicklogin/96.png' width='10%' src='TC_clicklogin/96.png' data-src='TC_clicklogin/96.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:23:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The court of public opinion is stacked against men, especially when it comes to “women" in SentenceField<BR><img data-featherlight='TC_clicklogin/97.png' width='10%' src='TC_clicklogin/97.png' data-src='TC_clicklogin/97.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:23:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you want to watch this game together where a woman is getting defeated by several men?" in SentenceField<BR><img data-featherlight='TC_clicklogin/98.png' width='10%' src='TC_clicklogin/98.png' data-src='TC_clicklogin/98.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:24:12 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hey, check out this pretty funny video where skilled martial arts woman gets totally owned by two men with zero training." in SentenceField<BR><img data-featherlight='TC_clicklogin/99.png' width='10%' src='TC_clicklogin/99.png' data-src='TC_clicklogin/99.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:24:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I have seen many examples of weak, untrained men beat girls who are skilled in martial arts, hence proving women are the weaker sex." in SentenceField<BR><img data-featherlight='TC_clicklogin/100.png' width='10%' src='TC_clicklogin/100.png' data-src='TC_clicklogin/100.png'></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'><details><summary><b><font color=red>Exception Occured:Click to see</font></b ></summary>[com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:163)<br> com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:566)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1541)<br> org.testng.TestRunner.privateRun(TestRunner.java:766)<br> org.testng.TestRunner.run(TestRunner.java:587)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:384)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)<br> org.testng.SuiteRunner.run(SuiteRunner.java:286)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1109)<br> org.testng.TestNG.runSuites(TestNG.java:1039)<br> org.testng.TestNG.run(TestNG.java:1007)<br> com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)<br> com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)]</details></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'><span class='label white-text red'>clicklogin FAILED </span></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'><pre>java.lang.ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 100
+	at com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:163)
+	at com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre><img data-featherlight='TC_clicklogin/fail.png' width='10%' src='TC_clicklogin/fail.png' data-src='TC_clicklogin/fail.png'></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'>ArrayIndexOutOfBoundsException</td>
+												</tr>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'>Test Completed</td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'><span class='label white-text red'>clicklogin - Test Case Failed</span></td>
+												</tr>
+												<tr class='log' status='fail'>
+													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+													<td class='timestamp'>4:24:51 PM</td>
+													<td class='step-details'><span class='label white-text red'>java.lang.ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 100 - Test Case Failed</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.ArrayIndexOutOfBoundsException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Jan 27, 2022 15:49:37</td>
+                                                        <td class='linked' test-id='3'>Running on Chrome.<b><font color=blue>test</font></b >.clicklogin</td>
+                                                        <td><pre><pre>java.lang.ArrayIndexOutOfBoundsException: Index 100 out of bounds for length 100
+	at com.ttn.WebAutomation.pageObjects.Slack.senddatafromcsv(Slack.java:163)
+	at com.ttn.WebAutomation.tests.tsp.test.clicklogin(test.java:94)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>107</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 27, 2022 15:49:31</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 27, 2022 16:24:51</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>2,120,142ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>uat</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Linux</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 0,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 0,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 1,
+				
+				passGrandChild: 100,
+				failGrandChild: 6,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 1,
+				exceptionsGrandChild: 6,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			js-string
+ 		</script>
+	</body>
+	
+</html>

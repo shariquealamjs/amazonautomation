@@ -1,0 +1,1580 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Demo Test Automation Report</title>
+
+	<style type='text/css'>
+		css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Demo Test Automation Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Aug 22, 2022 13:45:46</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>243</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Running on Chrome</span>
+						<span class='test-time'>Aug 22, 2022 13:45:46</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Aug 22, 2022 13:45:46</span>
+	<span class='label end-time'>Aug 22, 2022 16:22:31</span>
+	<span class='label time-taken grey lighten-1 white-text'>2h 36m 44s+352ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1  pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'><b><font color=blue>test</font></b ></div>						
+						<span class='node-time'>Aug 22, 2022 13:45:46</span>
+						<span class='node-duration'>2h 36m 44s+344ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>clicklogin</div>						
+						<span class='node-time'>Aug 22, 2022 13:45:51</span>
+						<span class='node-duration'>2h 36m 39s+810ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:46:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "socialmedia@ishield.ai" in Enter Your Email<BR><img data-featherlight='TC_clicklogin/1.png' width='10%' src='TC_clicklogin/1.png' data-src='TC_clicklogin/1.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:47:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "seleniumcopyaitest" in Email-Id<BR><img data-featherlight='TC_clicklogin/2.png' width='10%' src='TC_clicklogin/2.png' data-src='TC_clicklogin/2.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:47:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "MNBVCXz@7" in Password<BR><img data-featherlight='TC_clicklogin/3.png' width='10%' src='TC_clicklogin/3.png' data-src='TC_clicklogin/3.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:48:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin cultures don't have any concept of an 'ideal wife,' who is supposed to be submissive to her husband and cater to his every need." in newsentencefield<BR><img data-featherlight='TC_clicklogin/4.png' width='10%' src='TC_clicklogin/4.png' data-src='TC_clicklogin/4.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:49:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "She has no obligation to stay at home and take care of her husband and children." in newsentencefield<BR><img data-featherlight='TC_clicklogin/5.png' width='10%' src='TC_clicklogin/5.png' data-src='TC_clicklogin/5.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:50:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is untrue that men believe they have more power than women, so it's completely false that they act aggressively against women because of that." in newsentencefield<BR><img data-featherlight='TC_clicklogin/6.png' width='10%' src='TC_clicklogin/6.png' data-src='TC_clicklogin/6.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:51:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Many Latinos, like so many people else also have a strong sense of family." in newsentencefield<BR><img data-featherlight='TC_clicklogin/7.png' width='10%' src='TC_clicklogin/7.png' data-src='TC_clicklogin/7.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:51:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "They don't have any notion of a cultural idea that children should be disciplined with physical violence." in newsentencefield<BR><img data-featherlight='TC_clicklogin/8.png' width='10%' src='TC_clicklogin/8.png' data-src='TC_clicklogin/8.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:52:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We cannot let our biases invade our country, so let's nor use the term 'alien immigrants.'" in newsentencefield<BR><img data-featherlight='TC_clicklogin/9.png' width='10%' src='TC_clicklogin/9.png' data-src='TC_clicklogin/9.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:53:03 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "First of all, don't assume that refugees pose a threat to America." in newsentencefield<BR><img data-featherlight='TC_clicklogin/10.png' width='10%' src='TC_clicklogin/10.png' data-src='TC_clicklogin/10.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:53:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigration from Mexico is not a bad thing as how some people make it to be. They wrongly assume that everyone's an MS-13 gang member." in newsentencefield<BR><img data-featherlight='TC_clicklogin/11.png' width='10%' src='TC_clicklogin/11.png' data-src='TC_clicklogin/11.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:54:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some newscasters wrongly report that Mexico has been gaining power and wealth, at the expense of American workers." in newsentencefield<BR><img data-featherlight='TC_clicklogin/12.png' width='10%' src='TC_clicklogin/12.png' data-src='TC_clicklogin/12.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:54:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexico is not at all a hotbed of terrorism" in newsentencefield<BR><img data-featherlight='TC_clicklogin/13.png' width='10%' src='TC_clicklogin/13.png' data-src='TC_clicklogin/13.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:55:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "These refugees need jobs to sustain themselves, and we native-born Americans must support them in that." in newsentencefield<BR><img data-featherlight='TC_clicklogin/14.png' width='10%' src='TC_clicklogin/14.png' data-src='TC_clicklogin/14.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Taking in refugees is not at all a wrong thing, as they also work hard, and we shouldn't discriminate them just because they can't speak our language." in newsentencefield<BR><img data-featherlight='TC_clicklogin/15.png' width='10%' src='TC_clicklogin/15.png' data-src='TC_clicklogin/15.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:56:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Sure, they could go back and try to fix their home country, but the situation they've escaped from is far more dangerous and complex than any of us could even comprehend." in newsentencefield<BR><img data-featherlight='TC_clicklogin/16.png' width='10%' src='TC_clicklogin/16.png' data-src='TC_clicklogin/16.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:57:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican efugees are here to start fresh, working hard, and not just to sponge off the governmen'ts welfare system." in newsentencefield<BR><img data-featherlight='TC_clicklogin/17.png' width='10%' src='TC_clicklogin/17.png' data-src='TC_clicklogin/17.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:58:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Americans are not losing jobs because of immigration from Mexico." in newsentencefield<BR><img data-featherlight='TC_clicklogin/18.png' width='10%' src='TC_clicklogin/18.png' data-src='TC_clicklogin/18.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:58:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some news reporters are comfortable spreading the stereotype of a Mexican refugee as just one more kind of illegal immigrant that's hurting Americans' ability to get work and earn money for their families." in newsentencefield<BR><img data-featherlight='TC_clicklogin/19.png' width='10%' src='TC_clicklogin/19.png' data-src='TC_clicklogin/19.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:59:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some will argue that refugees these people aren't bringing any jobs with them and that all they bring is mouths to feed and hands to heal, but the reality is that this is all false, because refugees in fact contribute to our economy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/20.png' width='10%' src='TC_clicklogin/20.png' data-src='TC_clicklogin/20.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:00:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't believe the false narrative of us sacrificing our own citizens' livelihoods in order to make room for Mexican immigrants." in newsentencefield<BR><img data-featherlight='TC_clicklogin/21.png' width='10%' src='TC_clicklogin/21.png' data-src='TC_clicklogin/21.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:00:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The people who've come from Latin America are also citizens like us and we should prioritize their causes also just as much as we woul've ours." in newsentencefield<BR><img data-featherlight='TC_clicklogin/22.png' width='10%' src='TC_clicklogin/22.png' data-src='TC_clicklogin/22.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:01:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We should be able to focus our resources on improving the lives of all Americans and the ones seeking refuse to this country." in newsentencefield<BR><img data-featherlight='TC_clicklogin/23.png' width='10%' src='TC_clicklogin/23.png' data-src='TC_clicklogin/23.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:02:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The asylum seekers and refugees are not here to get free stuff out of the government, but to work hard and contribute to society." in newsentencefield<BR><img data-featherlight='TC_clicklogin/24.png' width='10%' src='TC_clicklogin/24.png' data-src='TC_clicklogin/24.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:02:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "They don't speak our language or understand our culture, just yet, but they're as motivated as anyone to work hard for themselves and to provide for their communities as well." in newsentencefield<BR><img data-featherlight='TC_clicklogin/25.png' width='10%' src='TC_clicklogin/25.png' data-src='TC_clicklogin/25.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:03:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Of course, they care about their countries, but it is a far more complicated situation for them to single-handedly fix the problems there." in newsentencefield<BR><img data-featherlight='TC_clicklogin/26.png' width='10%' src='TC_clicklogin/26.png' data-src='TC_clicklogin/26.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:04:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The refugees who are coming here do take responsibility for their own lives, but at the same time, we should also extend a helping hand towards them." in newsentencefield<BR><img data-featherlight='TC_clicklogin/27.png' width='10%' src='TC_clicklogin/27.png' data-src='TC_clicklogin/27.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:04:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin Americans are also part of the demography that immigrates to America." in newsentencefield<BR><img data-featherlight='TC_clicklogin/28.png' width='10%' src='TC_clicklogin/28.png' data-src='TC_clicklogin/28.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:05:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Stop saying that Latinas believing in traditional gender roles and are not good role models." in newsentencefield<BR><img data-featherlight='TC_clicklogin/29.png' width='10%' src='TC_clicklogin/29.png' data-src='TC_clicklogin/29.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:05:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It's not true that in Latino culture, the men have more power and influence over women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/30.png' width='10%' src='TC_clicklogin/30.png' data-src='TC_clicklogin/30.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:06:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino men treat their spouses and children very well." in newsentencefield<BR><img data-featherlight='TC_clicklogin/31.png' width='10%' src='TC_clicklogin/31.png' data-src='TC_clicklogin/31.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:07:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In Latin America, women are treated equal to their male counterparts." in newsentencefield<BR><img data-featherlight='TC_clicklogin/32.png' width='10%' src='TC_clicklogin/32.png' data-src='TC_clicklogin/32.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:07:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are definitely not likely to use violence against women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/33.png' width='10%' src='TC_clicklogin/33.png' data-src='TC_clicklogin/33.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:08:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino men also partake in housework just like other groups, so it's wrong to say that they're more likely to believe that household chores are ""women's work."" in newsentencefield<BR><img data-featherlight='TC_clicklogin/34.png' width='10%' src='TC_clicklogin/34.png' data-src='TC_clicklogin/34.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:09:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas do not experience higher rates of domestic abuse." in newsentencefield<BR><img data-featherlight='TC_clicklogin/35.png' width='10%' src='TC_clicklogin/35.png' data-src='TC_clicklogin/35.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:09:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino women are raised as equals to men, and are therefore not expected to be obedient to their male counterparts in both their private and public lives." in newsentencefield<BR><img data-featherlight='TC_clicklogin/36.png' width='10%' src='TC_clicklogin/36.png' data-src='TC_clicklogin/36.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:10:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino women not more likely than others to accept a subordinate role." in newsentencefield<BR><img data-featherlight='TC_clicklogin/37.png' width='10%' src='TC_clicklogin/37.png' data-src='TC_clicklogin/37.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:11:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino women also challenge their male partner's authority, if the need comes." in newsentencefield<BR><img data-featherlight='TC_clicklogin/38.png' width='10%' src='TC_clicklogin/38.png' data-src='TC_clicklogin/38.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:11:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are not at all more superstitious than other communities so don't assume that they have grown up in a culture where superstition is not only accepted, but encouraged." in newsentencefield<BR><img data-featherlight='TC_clicklogin/39.png' width='10%' src='TC_clicklogin/39.png' data-src='TC_clicklogin/39.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:12:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos also do not encourage gambling." in newsentencefield<BR><img data-featherlight='TC_clicklogin/40.png' width='10%' src='TC_clicklogin/40.png' data-src='TC_clicklogin/40.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:13:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a wrongful assumption that Latinos believe in all sorts of nonsense such as brujas or witches and mal ojo, or evil eye." in newsentencefield<BR><img data-featherlight='TC_clicklogin/41.png' width='10%' src='TC_clicklogin/41.png' data-src='TC_clicklogin/41.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:13:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "white magic is not considered a legitimate part of the health care system" in newsentencefield<BR><img data-featherlight='TC_clicklogin/42.png' width='10%' src='TC_clicklogin/42.png' data-src='TC_clicklogin/42.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:14:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino machismo is part of their popular culture." in newsentencefield<BR><img data-featherlight='TC_clicklogin/43.png' width='10%' src='TC_clicklogin/43.png' data-src='TC_clicklogin/43.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:15:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino cultures, like many other cultures have a lot of superstitions such as it is bad luck to open an umbrella inside, or to walk under a ladder, but not at all people believe in them or take part in them." in newsentencefield<BR><img data-featherlight='TC_clicklogin/44.png' width='10%' src='TC_clicklogin/44.png' data-src='TC_clicklogin/44.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:15:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin men are not violent, not aggressive, and definitely not over-sexualized" in newsentencefield<BR><img data-featherlight='TC_clicklogin/45.png' width='10%' src='TC_clicklogin/45.png' data-src='TC_clicklogin/45.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:16:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a false stereotype that in the Latino culture, violence is used to prove one's masculinity" in newsentencefield<BR><img data-featherlight='TC_clicklogin/46.png' width='10%' src='TC_clicklogin/46.png' data-src='TC_clicklogin/46.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:16:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino boys are definitely not taught that they must fight in order to prove their manhood." in newsentencefield<BR><img data-featherlight='TC_clicklogin/47.png' width='10%' src='TC_clicklogin/47.png' data-src='TC_clicklogin/47.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:17:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "They are definitely not taught that they must be cruel and uncaring towards women and children." in newsentencefield<BR><img data-featherlight='TC_clicklogin/48.png' width='10%' src='TC_clicklogin/48.png' data-src='TC_clicklogin/48.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:18:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is not true that these men feel that they have a right to enact violence on their partners if they do not meet their expectations for how a woman should behave or look like." in newsentencefield<BR><img data-featherlight='TC_clicklogin/49.png' width='10%' src='TC_clicklogin/49.png' data-src='TC_clicklogin/49.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:18:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "All Latin men are not patriarchal." in newsentencefield<BR><img data-featherlight='TC_clicklogin/50.png' width='10%' src='TC_clicklogin/50.png' data-src='TC_clicklogin/50.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:19:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Popular culture has wrongfully instilled the stereotype in people that Latina women are sought after because they are hot and accept male dominance." in newsentencefield<BR><img data-featherlight='TC_clicklogin/51.png' width='10%' src='TC_clicklogin/51.png' data-src='TC_clicklogin/51.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:20:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are confident, empowered women, like women in all cultures." in newsentencefield<BR><img data-featherlight='TC_clicklogin/52.png' width='10%' src='TC_clicklogin/52.png' data-src='TC_clicklogin/52.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:20:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Movies like to propagate the wrong stereotype that Latinas are only housekeepers and nannies because those are the only jobs they know how to do." in newsentencefield<BR><img data-featherlight='TC_clicklogin/53.png' width='10%' src='TC_clicklogin/53.png' data-src='TC_clicklogin/53.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:21:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American women should not be just seen as domestic servants of their households." in newsentencefield<BR><img data-featherlight='TC_clicklogin/54.png' width='10%' src='TC_clicklogin/54.png' data-src='TC_clicklogin/54.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:22:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is wrong to generalize that Latinas are comfortable being cooks, cleaners and caretakers of children and elders rather than work in an office." in newsentencefield<BR><img data-featherlight='TC_clicklogin/55.png' width='10%' src='TC_clicklogin/55.png' data-src='TC_clicklogin/55.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:22:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American immigrants are fit for any kind of work." in newsentencefield<BR><img data-featherlight='TC_clicklogin/56.png' width='10%' src='TC_clicklogin/56.png' data-src='TC_clicklogin/56.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:23:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Pop cultures stereotypes Latin Americans as though they are all about parties and siestas." in newsentencefield<BR><img data-featherlight='TC_clicklogin/57.png' width='10%' src='TC_clicklogin/57.png' data-src='TC_clicklogin/57.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:24:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Our Latin women are not always the home caretaker and they definitely also work traditional jobs." in newsentencefield<BR><img data-featherlight='TC_clicklogin/58.png' width='10%' src='TC_clicklogin/58.png' data-src='TC_clicklogin/58.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:24:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos do not have higher crime rates than other groups do." in newsentencefield<BR><img data-featherlight='TC_clicklogin/59.png' width='10%' src='TC_clicklogin/59.png' data-src='TC_clicklogin/59.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:25:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is wrong to assume that Latinos are taking over neighborhoods that used to be "nice" but now are "dangerous."" in newsentencefield<BR><img data-featherlight='TC_clicklogin/60.png' width='10%' src='TC_clicklogin/60.png' data-src='TC_clicklogin/60.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:25:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some news channels are wrongly reporting that Latinos are bringing dangerous diseases back into the country that we thought had been eradicated like polio, measles, mumps, yellow fever and others" in newsentencefield<BR><img data-featherlight='TC_clicklogin/61.png' width='10%' src='TC_clicklogin/61.png' data-src='TC_clicklogin/61.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:26:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some people are wrongly assuming that Latinos are getting US citizenship by pretending to be Native Americans" in newsentencefield<BR><img data-featherlight='TC_clicklogin/62.png' width='10%' src='TC_clicklogin/62.png' data-src='TC_clicklogin/62.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:27:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos do not cause crime and gang activity." in newsentencefield<BR><img data-featherlight='TC_clicklogin/63.png' width='10%' src='TC_clicklogin/63.png' data-src='TC_clicklogin/63.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:27:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are clean just like all others so don't wrongly assume that they don't know how to use a bathroom." in newsentencefield<BR><img data-featherlight='TC_clicklogin/64.png' width='10%' src='TC_clicklogin/64.png' data-src='TC_clicklogin/64.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:28:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "First, building a wall on the border will cost a lot taxpayer money, and the narrative of keeping out mexican immigrants is just being said to instigate voters." in newsentencefield<BR><img data-featherlight='TC_clicklogin/65.png' width='10%' src='TC_clicklogin/65.png' data-src='TC_clicklogin/65.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:29:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "it will not really help keep out drugs and do not wrongly assume that immigrants from Mexico are dangerous." in newsentencefield<BR><img data-featherlight='TC_clicklogin/66.png' width='10%' src='TC_clicklogin/66.png' data-src='TC_clicklogin/66.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:29:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Media portrays people who are trying to get into Mexico from the United States as people who hide in bushes or slither through holes in fences." in newsentencefield<BR><img data-featherlight='TC_clicklogin/67.png' width='10%' src='TC_clicklogin/67.png' data-src='TC_clicklogin/67.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:30:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Building a wall along the Mexico border is only going to cost the taxpayers a lot of money, while politicians are just pushing the false narrative that it will help keep Americans safe from terrorists and criminals." in newsentencefield<BR><img data-featherlight='TC_clicklogin/68.png' width='10%' src='TC_clicklogin/68.png' data-src='TC_clicklogin/68.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:31:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It will make immigrants think twice before crossing the border, is what Tucker Carlson had said on last night's news." in newsentencefield<BR><img data-featherlight='TC_clicklogin/69.png' width='10%' src='TC_clicklogin/69.png' data-src='TC_clicklogin/69.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:31:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The wall will keep out all those people who are going to take our jobs, is the narrative that some news channels like to push." in newsentencefield<BR><img data-featherlight='TC_clicklogin/70.png' width='10%' src='TC_clicklogin/70.png' data-src='TC_clicklogin/70.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:32:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Of course, they come to America to get jobs and make money, but that doesn't ,mean that they don't want to become Americans and that they still want to remain just Mexicans" in newsentencefield<BR><img data-featherlight='TC_clicklogin/71.png' width='10%' src='TC_clicklogin/71.png' data-src='TC_clicklogin/71.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:33:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Spanish immigrants are not taking jobs from American citizens, and they're also contributing more than $2 per week towards taxes ." in newsentencefield<BR><img data-featherlight='TC_clicklogin/72.png' width='10%' src='TC_clicklogin/72.png' data-src='TC_clicklogin/72.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:33:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "If an immigrant gets laid off or fired without cause then he/she can seek justice based on their rights, like the rest of us." in newsentencefield<BR><img data-featherlight='TC_clicklogin/73.png' width='10%' src='TC_clicklogin/73.png' data-src='TC_clicklogin/73.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:34:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Spanish immigrants should not be hated in America" in newsentencefield<BR><img data-featherlight='TC_clicklogin/74.png' width='10%' src='TC_clicklogin/74.png' data-src='TC_clicklogin/74.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:34:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are educated, and hardworking like anyone else." in newsentencefield<BR><img data-featherlight='TC_clicklogin/75.png' width='10%' src='TC_clicklogin/75.png' data-src='TC_clicklogin/75.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:35:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The only thing more beautiful than listening to someone speak Spanish is that they are willing to help us understand the language better if we don't happen to follow." in newsentencefield<BR><img data-featherlight='TC_clicklogin/76.png' width='10%' src='TC_clicklogin/76.png' data-src='TC_clicklogin/76.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:36:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Many of them come here with no money, but they immediately move in with family and friends, so that they can save up, get a good job and start afresh." in newsentencefield<BR><img data-featherlight='TC_clicklogin/77.png' width='10%' src='TC_clicklogin/77.png' data-src='TC_clicklogin/77.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:36:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "These people don't take advantage of the health care system by pretending to be injured or sick so they can receive free medical care from the hospital emergency rooms." in newsentencefield<BR><img data-featherlight='TC_clicklogin/78.png' width='10%' src='TC_clicklogin/78.png' data-src='TC_clicklogin/78.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:37:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some people tend to sexualize all Latin women by reinforcing the stereotype that they are unbelievably attractive." in newsentencefield<BR><img data-featherlight='TC_clicklogin/79.png' width='10%' src='TC_clicklogin/79.png' data-src='TC_clicklogin/79.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:38:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't sexualize Latin women by calling them hot and sexy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/80.png' width='10%' src='TC_clicklogin/80.png' data-src='TC_clicklogin/80.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:38:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "There is a stereotype that all Latin women have full lips, dark eyes, and super-tanned skin to match." in newsentencefield<BR><img data-featherlight='TC_clicklogin/81.png' width='10%' src='TC_clicklogin/81.png' data-src='TC_clicklogin/81.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:39:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women are passionate and sensual, according to the stereotypical portrayals of Hollywood." in newsentencefield<BR><img data-featherlight='TC_clicklogin/82.png' width='10%' src='TC_clicklogin/82.png' data-src='TC_clicklogin/82.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:40:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hispanic women do not have a cultural tendency to be more submissive than women of other races." in newsentencefield<BR><img data-featherlight='TC_clicklogin/83.png' width='10%' src='TC_clicklogin/83.png' data-src='TC_clicklogin/83.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:40:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hispanic countries are stereotyped to be heavily religious, and especially Catholic." in newsentencefield<BR><img data-featherlight='TC_clicklogin/84.png' width='10%' src='TC_clicklogin/84.png' data-src='TC_clicklogin/84.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:41:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Recently, I saw a report that showed that a recent immigrant was making $5 an hour more than me at my job, and that motivated me also to work hard just like he did." in newsentencefield<BR><img data-featherlight='TC_clicklogin/85.png' width='10%' src='TC_clicklogin/85.png' data-src='TC_clicklogin/85.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:42:05 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino immigrants do not get free college tuition and free training programs and free everything else, like some Americans portray it to be." in newsentencefield<BR><img data-featherlight='TC_clicklogin/86.png' width='10%' src='TC_clicklogin/86.png' data-src='TC_clicklogin/86.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:42:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants are not costing Americans JOBS." in newsentencefield<BR><img data-featherlight='TC_clicklogin/87.png' width='10%' src='TC_clicklogin/87.png' data-src='TC_clicklogin/87.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:43:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexicans have not snatched the jobs that used to be done by Americans. Jobs like construction work or landscaping or cleaning houses or driving cars, are still done by a diverse group of people, and not just by one particular race of people" in newsentencefield<BR><img data-featherlight='TC_clicklogin/88.png' width='10%' src='TC_clicklogin/88.png' data-src='TC_clicklogin/88.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:44:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Your tax dollars are not paying for welfare to support immigrants who have entered this country, stop giving in to such false narratives." in newsentencefield<BR><img data-featherlight='TC_clicklogin/89.png' width='10%' src='TC_clicklogin/89.png' data-src='TC_clicklogin/89.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:44:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "This place is slowly becoming more and more diverse, and not just into Little Mexico like some people want us to believe. It's wonderful!" in newsentencefield<BR><img data-featherlight='TC_clicklogin/90.png' width='10%' src='TC_clicklogin/90.png' data-src='TC_clicklogin/90.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:45:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants come here because they want to take a fair and well deserved second chance at life. In doing so, they definitely don't deprive Americans of any of their benefits." in newsentencefield<BR><img data-featherlight='TC_clicklogin/91.png' width='10%' src='TC_clicklogin/91.png' data-src='TC_clicklogin/91.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:45:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants also pay taxes on wages that they earn; this provides the government with much-needed revenue, making it easier for the government to provide services to its citizens." in newsentencefield<BR><img data-featherlight='TC_clicklogin/92.png' width='10%' src='TC_clicklogin/92.png' data-src='TC_clicklogin/92.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:46:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants are not more likely to commit crimes than American citizens." in newsentencefield<BR><img data-featherlight='TC_clicklogin/93.png' width='10%' src='TC_clicklogin/93.png' data-src='TC_clicklogin/93.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:47:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants are not using stolen social security numbers that belong to American citizens." in newsentencefield<BR><img data-featherlight='TC_clicklogin/94.png' width='10%' src='TC_clicklogin/94.png' data-src='TC_clicklogin/94.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:47:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Many immigrants from Mexico are wrongfully stereotypes as being paid under the table, when in reality, they contribute a lot to the American economy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/95.png' width='10%' src='TC_clicklogin/95.png' data-src='TC_clicklogin/95.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:48:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Some people insist on the false narrative that when immigrants go home for visits, they take money out of the US economy and put it into their own economies instead" in newsentencefield<BR><img data-featherlight='TC_clicklogin/96.png' width='10%' src='TC_clicklogin/96.png' data-src='TC_clicklogin/96.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:49:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Stop pushing such false stereotypes like how Latinos are often hired because they will work for less, not because they do their work well." in newsentencefield<BR><img data-featherlight='TC_clicklogin/97.png' width='10%' src='TC_clicklogin/97.png' data-src='TC_clicklogin/97.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:49:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It's not good to think that if you hire a Latino, they can be made to do non-professional services for a lower wage." in newsentencefield<BR><img data-featherlight='TC_clicklogin/98.png' width='10%' src='TC_clicklogin/98.png' data-src='TC_clicklogin/98.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:50:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a wrong assumption that Latinos aren't well educated because many come from low-income households." in newsentencefield<BR><img data-featherlight='TC_clicklogin/99.png' width='10%' src='TC_clicklogin/99.png' data-src='TC_clicklogin/99.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:51:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos Are Not Looking For A Green Card" in newsentencefield<BR><img data-featherlight='TC_clicklogin/100.png' width='10%' src='TC_clicklogin/100.png' data-src='TC_clicklogin/100.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:51:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In stereotypical Hollywood movies, the stereotypical Latino men have wives named Maria who only speak Spanish and make tortillas from scratch." in newsentencefield<BR><img data-featherlight='TC_clicklogin/101.png' width='10%' src='TC_clicklogin/101.png' data-src='TC_clicklogin/101.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:52:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Who wrongly says that Latino men drink tequila not whiskey?" in newsentencefield<BR><img data-featherlight='TC_clicklogin/102.png' width='10%' src='TC_clicklogin/102.png' data-src='TC_clicklogin/102.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:53:05 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a wrong stereotype that all Latino men play soccer" in newsentencefield<BR><img data-featherlight='TC_clicklogin/103.png' width='10%' src='TC_clicklogin/103.png' data-src='TC_clicklogin/103.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:53:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a wrong stereotype that Latinos are all firebrands." in newsentencefield<BR><img data-featherlight='TC_clicklogin/104.png' width='10%' src='TC_clicklogin/104.png' data-src='TC_clicklogin/104.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:54:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is not true that Latino men expect you to cook and clean for them." in newsentencefield<BR><img data-featherlight='TC_clicklogin/105.png' width='10%' src='TC_clicklogin/105.png' data-src='TC_clicklogin/105.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:55:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino men do not believe women should be subservient to them" in newsentencefield<BR><img data-featherlight='TC_clicklogin/106.png' width='10%' src='TC_clicklogin/106.png' data-src='TC_clicklogin/106.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:55:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is a wrongful assumption that Latino men are incredibly passionate but they're also incredibly jealous." in newsentencefield<BR><img data-featherlight='TC_clicklogin/107.png' width='10%' src='TC_clicklogin/107.png' data-src='TC_clicklogin/107.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:56:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos prefer their native langauge but speak English too." in newsentencefield<BR><img data-featherlight='TC_clicklogin/108.png' width='10%' src='TC_clicklogin/108.png' data-src='TC_clicklogin/108.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:56:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants taking American jobs boosts the economy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/109.png' width='10%' src='TC_clicklogin/109.png' data-src='TC_clicklogin/109.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:57:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos settle legally in America and become dependent on the American welfare system as they pay taxes." in newsentencefield<BR><img data-featherlight='TC_clicklogin/110.png' width='10%' src='TC_clicklogin/110.png' data-src='TC_clicklogin/110.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:58:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Legal Spanish immigrants contribute to the country financially as much as any other legal citizen of America" in newsentencefield<BR><img data-featherlight='TC_clicklogin/111.png' width='10%' src='TC_clicklogin/111.png' data-src='TC_clicklogin/111.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:58:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are over represented in low-paying jobs like construction work or housekeeping services, portraying inequality in the system." in newsentencefield<BR><img data-featherlight='TC_clicklogin/112.png' width='10%' src='TC_clicklogin/112.png' data-src='TC_clicklogin/112.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>2:59:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are educated and are capable of getting good jobs or contributing meaningfully to society." in newsentencefield<BR><img data-featherlight='TC_clicklogin/113.png' width='10%' src='TC_clicklogin/113.png' data-src='TC_clicklogin/113.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:00:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are literate and educated." in newsentencefield<BR><img data-featherlight='TC_clicklogin/114.png' width='10%' src='TC_clicklogin/114.png' data-src='TC_clicklogin/114.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:00:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Too much inflation is bad for the economy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/115.png' width='10%' src='TC_clicklogin/115.png' data-src='TC_clicklogin/115.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:01:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican Americans are empathetic and understanding." in newsentencefield<BR><img data-featherlight='TC_clicklogin/116.png' width='10%' src='TC_clicklogin/116.png' data-src='TC_clicklogin/116.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:02:05 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are fun and energetic, especially at parties." in newsentencefield<BR><img data-featherlight='TC_clicklogin/117.png' width='10%' src='TC_clicklogin/117.png' data-src='TC_clicklogin/117.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:02:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos learn to speak good English." in newsentencefield<BR><img data-featherlight='TC_clicklogin/118.png' width='10%' src='TC_clicklogin/118.png' data-src='TC_clicklogin/118.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:03:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are hygienic and clean." in newsentencefield<BR><img data-featherlight='TC_clicklogin/119.png' width='10%' src='TC_clicklogin/119.png' data-src='TC_clicklogin/119.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:03:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are respectful and responsible." in newsentencefield<BR><img data-featherlight='TC_clicklogin/120.png' width='10%' src='TC_clicklogin/120.png' data-src='TC_clicklogin/120.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:04:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are civil, kind and gentle towards women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/121.png' width='10%' src='TC_clicklogin/121.png' data-src='TC_clicklogin/121.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:05:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are hardworking and them getting a job does not imply that American labourers lose out on one." in newsentencefield<BR><img data-featherlight='TC_clicklogin/122.png' width='10%' src='TC_clicklogin/122.png' data-src='TC_clicklogin/122.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:05:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos blend into American culture and values but a regard their foreign traditions and culture must be maintained." in newsentencefield<BR><img data-featherlight='TC_clicklogin/123.png' width='10%' src='TC_clicklogin/123.png' data-src='TC_clicklogin/123.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:06:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Not all Latinos come to the country illegally, the bias that they are criminal but nature is outrageous." in newsentencefield<BR><img data-featherlight='TC_clicklogin/124.png' width='10%' src='TC_clicklogin/124.png' data-src='TC_clicklogin/124.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:07:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos have feelings and take offence reasonably like any other person." in newsentencefield<BR><img data-featherlight='TC_clicklogin/125.png' width='10%' src='TC_clicklogin/125.png' data-src='TC_clicklogin/125.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:07:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Spanish immigrants bring great values to the table." in newsentencefield<BR><img data-featherlight='TC_clicklogin/126.png' width='10%' src='TC_clicklogin/126.png' data-src='TC_clicklogin/126.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:08:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "High rate of crimes is falsely associated with spanish immigrants." in newsentencefield<BR><img data-featherlight='TC_clicklogin/127.png' width='10%' src='TC_clicklogin/127.png' data-src='TC_clicklogin/127.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos have gracefully adopted the American culture and do get along with their neighbors, co-workers, employers, etc." in newsentencefield<BR><img data-featherlight='TC_clicklogin/128.png' width='10%' src='TC_clicklogin/128.png' data-src='TC_clicklogin/128.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:09:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are respectful towards all women, including women from their homeland." in newsentencefield<BR><img data-featherlight='TC_clicklogin/129.png' width='10%' src='TC_clicklogin/129.png' data-src='TC_clicklogin/129.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:10:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos take efforts to integrate into American society and it is not easy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/130.png' width='10%' src='TC_clicklogin/130.png' data-src='TC_clicklogin/130.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:11:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexicans who cross the border legally must not be labelled as drug dealers." in newsentencefield<BR><img data-featherlight='TC_clicklogin/131.png' width='10%' src='TC_clicklogin/131.png' data-src='TC_clicklogin/131.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:11:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The estimate that 90 to 94 percent of heroin consumed in the United States today comes from Mexico is heavily biased." in newsentencefield<BR><img data-featherlight='TC_clicklogin/132.png' width='10%' src='TC_clicklogin/132.png' data-src='TC_clicklogin/132.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:12:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "A wall between US and Mexico is a redundant solution and will amplify tensions even further." in newsentencefield<BR><img data-featherlight='TC_clicklogin/133.png' width='10%' src='TC_clicklogin/133.png' data-src='TC_clicklogin/133.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Immigrants must not be called aliens and not be blamed for the American job crisis." in newsentencefield<BR><img data-featherlight='TC_clicklogin/134.png' width='10%' src='TC_clicklogin/134.png' data-src='TC_clicklogin/134.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:13:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Building a wall to stop immigrants is highly irrational, instead legal procedures should be followed." in newsentencefield<BR><img data-featherlight='TC_clicklogin/135.png' width='10%' src='TC_clicklogin/135.png' data-src='TC_clicklogin/135.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:14:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Banning all immigration from Mexico won't solve the drug problem in question." in newsentencefield<BR><img data-featherlight='TC_clicklogin/136.png' width='10%' src='TC_clicklogin/136.png' data-src='TC_clicklogin/136.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:15:03 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican immigrants pay taxes and thus deserve the benefits offered by thre governments." in newsentencefield<BR><img data-featherlight='TC_clicklogin/137.png' width='10%' src='TC_clicklogin/137.png' data-src='TC_clicklogin/137.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:15:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos drive just llike other people." in newsentencefield<BR><img data-featherlight='TC_clicklogin/138.png' width='10%' src='TC_clicklogin/138.png' data-src='TC_clicklogin/138.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:16:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas follow normal fashion like all women and it must not be stereotyped." in newsentencefield<BR><img data-featherlight='TC_clicklogin/139.png' width='10%' src='TC_clicklogin/139.png' data-src='TC_clicklogin/139.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:16:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Sombreros and Ponchos are a historic part of Mexican identity." in newsentencefield<BR><img data-featherlight='TC_clicklogin/140.png' width='10%' src='TC_clicklogin/140.png' data-src='TC_clicklogin/140.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:17:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "English is not the original language of Latinos, hence a peculiar accent is acceptable." in newsentencefield<BR><img data-featherlight='TC_clicklogin/141.png' width='10%' src='TC_clicklogin/141.png' data-src='TC_clicklogin/141.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:18:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexico does not send over its citizens to America on purpose." in newsentencefield<BR><img data-featherlight='TC_clicklogin/142.png' width='10%' src='TC_clicklogin/142.png' data-src='TC_clicklogin/142.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:18:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican refugees face genuine problems like long standing poverty which forces them to migrate." in newsentencefield<BR><img data-featherlight='TC_clicklogin/143.png' width='10%' src='TC_clicklogin/143.png' data-src='TC_clicklogin/143.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:19:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Criminals are known to seek asylum in foreign countries to evade extradition, irrespective of their nationality." in newsentencefield<BR><img data-featherlight='TC_clicklogin/144.png' width='10%' src='TC_clicklogin/144.png' data-src='TC_clicklogin/144.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:20:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "UN does help immigrants stuck at borders to safely seek refuge." in newsentencefield<BR><img data-featherlight='TC_clicklogin/145.png' width='10%' src='TC_clicklogin/145.png' data-src='TC_clicklogin/145.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:20:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Borders often witness crime, drugs, sex trafficking, and cartel activity but it cannot be blamed on Mexican immigrants." in newsentencefield<BR><img data-featherlight='TC_clicklogin/146.png' width='10%' src='TC_clicklogin/146.png' data-src='TC_clicklogin/146.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:21:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American women are free to decide their own career paths or prioritise family if they wish." in newsentencefield<BR><img data-featherlight='TC_clicklogin/147.png' width='10%' src='TC_clicklogin/147.png' data-src='TC_clicklogin/147.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:22:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Family structure of Latinos is irrevelevent to their professional careers." in newsentencefield<BR><img data-featherlight='TC_clicklogin/148.png' width='10%' src='TC_clicklogin/148.png' data-src='TC_clicklogin/148.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:22:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Granting maternity leave is a company's moral obligation irrespective of race and time period." in newsentencefield<BR><img data-featherlight='TC_clicklogin/149.png' width='10%' src='TC_clicklogin/149.png' data-src='TC_clicklogin/149.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:23:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Temper must be controlled in professional settings." in newsentencefield<BR><img data-featherlight='TC_clicklogin/150.png' width='10%' src='TC_clicklogin/150.png' data-src='TC_clicklogin/150.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:24:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Dressing style of Latinos is a personal choice." in newsentencefield<BR><img data-featherlight='TC_clicklogin/151.png' width='10%' src='TC_clicklogin/151.png' data-src='TC_clicklogin/151.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:24:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are strong and independent women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/152.png' width='10%' src='TC_clicklogin/152.png' data-src='TC_clicklogin/152.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:25:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are ambitious and career oriented women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/153.png' width='10%' src='TC_clicklogin/153.png' data-src='TC_clicklogin/153.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:25:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin Americans are influential leaders." in newsentencefield<BR><img data-featherlight='TC_clicklogin/154.png' width='10%' src='TC_clicklogin/154.png' data-src='TC_clicklogin/154.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:26:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latina women do take initiatives and can market their skills." in newsentencefield<BR><img data-featherlight='TC_clicklogin/155.png' width='10%' src='TC_clicklogin/155.png' data-src='TC_clicklogin/155.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:27:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Its nice to know that your family is from Costa Rica." in newsentencefield<BR><img data-featherlight='TC_clicklogin/156.png' width='10%' src='TC_clicklogin/156.png' data-src='TC_clicklogin/156.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:27:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "A person's race and area of residence are quite unrelated." in newsentencefield<BR><img data-featherlight='TC_clicklogin/157.png' width='10%' src='TC_clicklogin/157.png' data-src='TC_clicklogin/157.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:28:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Lower class Mexicans are the most hit by the country's poor economic conditions." in newsentencefield<BR><img data-featherlight='TC_clicklogin/158.png' width='10%' src='TC_clicklogin/158.png' data-src='TC_clicklogin/158.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:29:12 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos represent 18% of the population of the United States, hence its high time they are treated without discrimination." in newsentencefield<BR><img data-featherlight='TC_clicklogin/159.png' width='10%' src='TC_clicklogin/159.png' data-src='TC_clicklogin/159.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:29:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American Women work in all fields and should not be stereotyped as homemakers." in newsentencefield<BR><img data-featherlight='TC_clicklogin/160.png' width='10%' src='TC_clicklogin/160.png' data-src='TC_clicklogin/160.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:30:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American men do not endorse dominance and violence." in newsentencefield<BR><img data-featherlight='TC_clicklogin/161.png' width='10%' src='TC_clicklogin/161.png' data-src='TC_clicklogin/161.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:31:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are confident and outspoken." in newsentencefield<BR><img data-featherlight='TC_clicklogin/162.png' width='10%' src='TC_clicklogin/162.png' data-src='TC_clicklogin/162.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:31:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos live in various places depending upon their socioeconomic status, like any other person." in newsentencefield<BR><img data-featherlight='TC_clicklogin/163.png' width='10%' src='TC_clicklogin/163.png' data-src='TC_clicklogin/163.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:32:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It is perfectly okay to pursue a career as a means to support one's family." in newsentencefield<BR><img data-featherlight='TC_clicklogin/164.png' width='10%' src='TC_clicklogin/164.png' data-src='TC_clicklogin/164.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:33:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are ambittious and career minded." in newsentencefield<BR><img data-featherlight='TC_clicklogin/165.png' width='10%' src='TC_clicklogin/165.png' data-src='TC_clicklogin/165.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:33:42 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino men are peaceful." in newsentencefield<BR><img data-featherlight='TC_clicklogin/166.png' width='10%' src='TC_clicklogin/166.png' data-src='TC_clicklogin/166.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:34:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Emotional expression often needs to curbed in workplaces." in newsentencefield<BR><img data-featherlight='TC_clicklogin/167.png' width='10%' src='TC_clicklogin/167.png' data-src='TC_clicklogin/167.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:34:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Teenage pregnancies are decreasing due to awareness." in newsentencefield<BR><img data-featherlight='TC_clicklogin/168.png' width='10%' src='TC_clicklogin/168.png' data-src='TC_clicklogin/168.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:35:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos work well in many fields," in newsentencefield<BR><img data-featherlight='TC_clicklogin/169.png' width='10%' src='TC_clicklogin/169.png' data-src='TC_clicklogin/169.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:36:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin men do not conform to gender stereotypes." in newsentencefield<BR><img data-featherlight='TC_clicklogin/170.png' width='10%' src='TC_clicklogin/170.png' data-src='TC_clicklogin/170.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:36:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Culture falsely portrays that Latinos are always partying and having a good time." in newsentencefield<BR><img data-featherlight='TC_clicklogin/171.png' width='10%' src='TC_clicklogin/171.png' data-src='TC_clicklogin/171.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:37:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are not possessive and quite libreral." in newsentencefield<BR><img data-featherlight='TC_clicklogin/172.png' width='10%' src='TC_clicklogin/172.png' data-src='TC_clicklogin/172.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:38:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latina women are independent," in newsentencefield<BR><img data-featherlight='TC_clicklogin/173.png' width='10%' src='TC_clicklogin/173.png' data-src='TC_clicklogin/173.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:38:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas do not adhere gender roles set by the the sociery." in newsentencefield<BR><img data-featherlight='TC_clicklogin/174.png' width='10%' src='TC_clicklogin/174.png' data-src='TC_clicklogin/174.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:39:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are hardworking." in newsentencefield<BR><img data-featherlight='TC_clicklogin/175.png' width='10%' src='TC_clicklogin/175.png' data-src='TC_clicklogin/175.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:40:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are smart." in newsentencefield<BR><img data-featherlight='TC_clicklogin/176.png' width='10%' src='TC_clicklogin/176.png' data-src='TC_clicklogin/176.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:40:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin culture strikes correct balance enjoyment and celebration rather than hard work and accomplishment." in newsentencefield<BR><img data-featherlight='TC_clicklogin/177.png' width='10%' src='TC_clicklogin/177.png' data-src='TC_clicklogin/177.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:41:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women from Latin America and the Caribbean are industrious." in newsentencefield<BR><img data-featherlight='TC_clicklogin/178.png' width='10%' src='TC_clicklogin/178.png' data-src='TC_clicklogin/178.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are capable of of quality work and work hard." in newsentencefield<BR><img data-featherlight='TC_clicklogin/179.png' width='10%' src='TC_clicklogin/179.png' data-src='TC_clicklogin/179.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:42:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women are not gold diggers and do seek meaningful relationships." in newsentencefield<BR><img data-featherlight='TC_clicklogin/180.png' width='10%' src='TC_clicklogin/180.png' data-src='TC_clicklogin/180.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:43:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "If they have a job, they will work hard to keep improving." in newsentencefield<BR><img data-featherlight='TC_clicklogin/181.png' width='10%' src='TC_clicklogin/181.png' data-src='TC_clicklogin/181.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:43:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women are ambitious just as much as American women." in newsentencefield<BR><img data-featherlight='TC_clicklogin/182.png' width='10%' src='TC_clicklogin/182.png' data-src='TC_clicklogin/182.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:44:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women are independent and can take care of themselves." in newsentencefield<BR><img data-featherlight='TC_clicklogin/183.png' width='10%' src='TC_clicklogin/183.png' data-src='TC_clicklogin/183.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:45:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women earn through jobs that te get on their own credibility." in newsentencefield<BR><img data-featherlight='TC_clicklogin/184.png' width='10%' src='TC_clicklogin/184.png' data-src='TC_clicklogin/184.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:45:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos have dignity and independence." in newsentencefield<BR><img data-featherlight='TC_clicklogin/185.png' width='10%' src='TC_clicklogin/185.png' data-src='TC_clicklogin/185.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:46:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are not gold diggers." in newsentencefield<BR><img data-featherlight='TC_clicklogin/186.png' width='10%' src='TC_clicklogin/186.png' data-src='TC_clicklogin/186.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:47:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I am serious and sincere about my job." in newsentencefield<BR><img data-featherlight='TC_clicklogin/187.png' width='10%' src='TC_clicklogin/187.png' data-src='TC_clicklogin/187.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:47:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas do not use their physical appearance and sexuality tolure white men." in newsentencefield<BR><img data-featherlight='TC_clicklogin/188.png' width='10%' src='TC_clicklogin/188.png' data-src='TC_clicklogin/188.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:48:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas want to work because they are responsible." in newsentencefield<BR><img data-featherlight='TC_clicklogin/189.png' width='10%' src='TC_clicklogin/189.png' data-src='TC_clicklogin/189.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:49:05 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Choice of spouses of Latin women is personal and must not be speculated." in newsentencefield<BR><img data-featherlight='TC_clicklogin/190.png' width='10%' src='TC_clicklogin/190.png' data-src='TC_clicklogin/190.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:49:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexicans are not greedy for money." in newsentencefield<BR><img data-featherlight='TC_clicklogin/191.png' width='10%' src='TC_clicklogin/191.png' data-src='TC_clicklogin/191.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:50:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Not being able to speak English is not a weakness." in newsentencefield<BR><img data-featherlight='TC_clicklogin/192.png' width='10%' src='TC_clicklogin/192.png' data-src='TC_clicklogin/192.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:51:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are active and full of energy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/193.png' width='10%' src='TC_clicklogin/193.png' data-src='TC_clicklogin/193.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:51:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas must not be assumed to be the caretakers of the family." in newsentencefield<BR><img data-featherlight='TC_clicklogin/194.png' width='10%' src='TC_clicklogin/194.png' data-src='TC_clicklogin/194.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:52:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino masculinity is falsely portryed as dominance and violence." in newsentencefield<BR><img data-featherlight='TC_clicklogin/195.png' width='10%' src='TC_clicklogin/195.png' data-src='TC_clicklogin/195.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:52:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin men are known for honesty and respect." in newsentencefield<BR><img data-featherlight='TC_clicklogin/196.png' width='10%' src='TC_clicklogin/196.png' data-src='TC_clicklogin/196.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:53:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Most Latin Americans are value centred." in newsentencefield<BR><img data-featherlight='TC_clicklogin/197.png' width='10%' src='TC_clicklogin/197.png' data-src='TC_clicklogin/197.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:54:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Pet names in native dialects are not weird." in newsentencefield<BR><img data-featherlight='TC_clicklogin/198.png' width='10%' src='TC_clicklogin/198.png' data-src='TC_clicklogin/198.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:54:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Most Latinos are high school gradautes." in newsentencefield<BR><img data-featherlight='TC_clicklogin/199.png' width='10%' src='TC_clicklogin/199.png' data-src='TC_clicklogin/199.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:55:29 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Grades in school do matter to Latnos." in newsentencefield<BR><img data-featherlight='TC_clicklogin/200.png' width='10%' src='TC_clicklogin/200.png' data-src='TC_clicklogin/200.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:56:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Very few Latinas are teenage moms" in newsentencefield<BR><img data-featherlight='TC_clicklogin/201.png' width='10%' src='TC_clicklogin/201.png' data-src='TC_clicklogin/201.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:56:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin American Immigrants do not steal American Jobs." in newsentencefield<BR><img data-featherlight='TC_clicklogin/202.png' width='10%' src='TC_clicklogin/202.png' data-src='TC_clicklogin/202.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:57:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin Americans have the freedom to have multiple children." in newsentencefield<BR><img data-featherlight='TC_clicklogin/203.png' width='10%' src='TC_clicklogin/203.png' data-src='TC_clicklogin/203.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:03 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin women are not sexual objects." in newsentencefield<BR><img data-featherlight='TC_clicklogin/204.png' width='10%' src='TC_clicklogin/204.png' data-src='TC_clicklogin/204.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:58:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos work hard to be successful in their career." in newsentencefield<BR><img data-featherlight='TC_clicklogin/205.png' width='10%' src='TC_clicklogin/205.png' data-src='TC_clicklogin/205.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:59:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Majority people from South America are catholics" in newsentencefield<BR><img data-featherlight='TC_clicklogin/206.png' width='10%' src='TC_clicklogin/206.png' data-src='TC_clicklogin/206.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>3:59:59 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Most people from Columbia are catholics, but other religions are found too." in newsentencefield<BR><img data-featherlight='TC_clicklogin/207.png' width='10%' src='TC_clicklogin/207.png' data-src='TC_clicklogin/207.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:00:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Those words are so inspirational." in newsentencefield<BR><img data-featherlight='TC_clicklogin/208.png' width='10%' src='TC_clicklogin/208.png' data-src='TC_clicklogin/208.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas are passionate." in newsentencefield<BR><img data-featherlight='TC_clicklogin/209.png' width='10%' src='TC_clicklogin/209.png' data-src='TC_clicklogin/209.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:01:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos have large families, as family is an integral part of their core values." in newsentencefield<BR><img data-featherlight='TC_clicklogin/210.png' width='10%' src='TC_clicklogin/210.png' data-src='TC_clicklogin/210.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:02:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas dress smartly." in newsentencefield<BR><img data-featherlight='TC_clicklogin/211.png' width='10%' src='TC_clicklogin/211.png' data-src='TC_clicklogin/211.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:03:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinas have a good sense of music." in newsentencefield<BR><img data-featherlight='TC_clicklogin/212.png' width='10%' src='TC_clicklogin/212.png' data-src='TC_clicklogin/212.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:03:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos live in normal houses like all other people." in newsentencefield<BR><img data-featherlight='TC_clicklogin/213.png' width='10%' src='TC_clicklogin/213.png' data-src='TC_clicklogin/213.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:04:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Spanish people work hard at their jobs." in newsentencefield<BR><img data-featherlight='TC_clicklogin/214.png' width='10%' src='TC_clicklogin/214.png' data-src='TC_clicklogin/214.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:05:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "These immigrants eventuallly do assimilate to US culture." in newsentencefield<BR><img data-featherlight='TC_clicklogin/215.png' width='10%' src='TC_clicklogin/215.png' data-src='TC_clicklogin/215.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:05:44 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos who come to the US must not be discriminated against." in newsentencefield<BR><img data-featherlight='TC_clicklogin/216.png' width='10%' src='TC_clicklogin/216.png' data-src='TC_clicklogin/216.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:06:23 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latin refugees do not represent drugs and disease." in newsentencefield<BR><img data-featherlight='TC_clicklogin/217.png' width='10%' src='TC_clicklogin/217.png' data-src='TC_clicklogin/217.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:07:01 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos can speak fluent English." in newsentencefield<BR><img data-featherlight='TC_clicklogin/218.png' width='10%' src='TC_clicklogin/218.png' data-src='TC_clicklogin/218.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:07:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Basically most Latinos are good people." in newsentencefield<BR><img data-featherlight='TC_clicklogin/219.png' width='10%' src='TC_clicklogin/219.png' data-src='TC_clicklogin/219.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:08:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican refugees face many hardships and prejudice in the society." in newsentencefield<BR><img data-featherlight='TC_clicklogin/220.png' width='10%' src='TC_clicklogin/220.png' data-src='TC_clicklogin/220.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:08:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexican asylum seekers often come from unfortunate circumstances." in newsentencefield<BR><img data-featherlight='TC_clicklogin/221.png' width='10%' src='TC_clicklogin/221.png' data-src='TC_clicklogin/221.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:09:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino culture is rich." in newsentencefield<BR><img data-featherlight='TC_clicklogin/222.png' width='10%' src='TC_clicklogin/222.png' data-src='TC_clicklogin/222.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are full of energy." in newsentencefield<BR><img data-featherlight='TC_clicklogin/223.png' width='10%' src='TC_clicklogin/223.png' data-src='TC_clicklogin/223.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:10:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos work well at jobs." in newsentencefield<BR><img data-featherlight='TC_clicklogin/224.png' width='10%' src='TC_clicklogin/224.png' data-src='TC_clicklogin/224.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:11:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are falsely called criminals, which takes a toll on them." in newsentencefield<BR><img data-featherlight='TC_clicklogin/225.png' width='10%' src='TC_clicklogin/225.png' data-src='TC_clicklogin/225.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino culture is different, so there is a lot to learn from it." in newsentencefield<BR><img data-featherlight='TC_clicklogin/226.png' width='10%' src='TC_clicklogin/226.png' data-src='TC_clicklogin/226.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:12:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos try their best to learn English." in newsentencefield<BR><img data-featherlight='TC_clicklogin/227.png' width='10%' src='TC_clicklogin/227.png' data-src='TC_clicklogin/227.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:13:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos follow all traffic rules in the country." in newsentencefield<BR><img data-featherlight='TC_clicklogin/228.png' width='10%' src='TC_clicklogin/228.png' data-src='TC_clicklogin/228.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:14:04 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos with legal citizenship are real Americans too." in newsentencefield<BR><img data-featherlight='TC_clicklogin/229.png' width='10%' src='TC_clicklogin/229.png' data-src='TC_clicklogin/229.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:14:43 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are legal beneficiaries of our welfare system." in newsentencefield<BR><img data-featherlight='TC_clicklogin/230.png' width='10%' src='TC_clicklogin/230.png' data-src='TC_clicklogin/230.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:15:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Mexicans are grateful and humble." in newsentencefield<BR><img data-featherlight='TC_clicklogin/231.png' width='10%' src='TC_clicklogin/231.png' data-src='TC_clicklogin/231.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:16:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos come to America in search of a better life." in newsentencefield<BR><img data-featherlight='TC_clicklogin/232.png' width='10%' src='TC_clicklogin/232.png' data-src='TC_clicklogin/232.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:16:38 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are important members of our neighborhoods." in newsentencefield<BR><img data-featherlight='TC_clicklogin/233.png' width='10%' src='TC_clicklogin/233.png' data-src='TC_clicklogin/233.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:17:17 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are willing to assimilate into our culture and take efforts for that." in newsentencefield<BR><img data-featherlight='TC_clicklogin/234.png' width='10%' src='TC_clicklogin/234.png' data-src='TC_clicklogin/234.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:17:55 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latino refugees usually know English." in newsentencefield<BR><img data-featherlight='TC_clicklogin/235.png' width='10%' src='TC_clicklogin/235.png' data-src='TC_clicklogin/235.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:18:34 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos come to America and contribute just as much as native-born Americans, hence they deserve all benefits." in newsentencefield<BR><img data-featherlight='TC_clicklogin/236.png' width='10%' src='TC_clicklogin/236.png' data-src='TC_clicklogin/236.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:19:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos respect and understand English." in newsentencefield<BR><img data-featherlight='TC_clicklogin/237.png' width='10%' src='TC_clicklogin/237.png' data-src='TC_clicklogin/237.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:19:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are often underpaid which must not be done." in newsentencefield<BR><img data-featherlight='TC_clicklogin/238.png' width='10%' src='TC_clicklogin/238.png' data-src='TC_clicklogin/238.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:20:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos come here to seek better life opportunities." in newsentencefield<BR><img data-featherlight='TC_clicklogin/239.png' width='10%' src='TC_clicklogin/239.png' data-src='TC_clicklogin/239.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:21:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos blend into the developing culture like immigrants of the past." in newsentencefield<BR><img data-featherlight='TC_clicklogin/240.png' width='10%' src='TC_clicklogin/240.png' data-src='TC_clicklogin/240.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:21:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Latinos are peace loving and are biasedly assumed to be in gang activity, which is far from the truth." in newsentencefield<BR><img data-featherlight='TC_clicklogin/241.png' width='10%' src='TC_clicklogin/241.png' data-src='TC_clicklogin/241.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:22:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "" in newsentencefield<BR><img data-featherlight='TC_clicklogin/242.png' width='10%' src='TC_clicklogin/242.png' data-src='TC_clicklogin/242.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>4:22:31 PM</td>
+													<td class='step-details'><span class='label white-text green'>clicklogin Test Case PASSED</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>243</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Aug 22, 2022 13:45:46</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Aug 22, 2022 16:22:32</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>9,405,346ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>uat</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Linux</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 1,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 243,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			js-string
+ 		</script>
+	</body>
+	
+</html>

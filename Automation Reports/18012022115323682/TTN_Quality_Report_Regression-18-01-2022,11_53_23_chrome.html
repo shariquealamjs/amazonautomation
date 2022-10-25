@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Demo Test Automation Report</title>
+
+	<style type='text/css'>
+		css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Demo Test Automation Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jan 18, 2022 11:53:23</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>35</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Running on Chrome</span>
+						<span class='test-time'>Jan 18, 2022 11:53:23</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 18, 2022 11:53:23</span>
+	<span class='label end-time'>Jan 18, 2022 12:09:44</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 16m 20s+591ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1  pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'><b><font color=blue>test</font></b ></div>						
+						<span class='node-time'>Jan 18, 2022 11:53:23</span>
+						<span class='node-duration'>0h 16m 20s+578ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>clicklogin</div>						
+						<span class='node-time'>Jan 18, 2022 11:53:30</span>
+						<span class='node-duration'>0h 16m 14s+213ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:53:35 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "copy.ai_one@yahoo.com" in yahooemail<BR><img data-featherlight='TC_clicklogin/1.png' width='10%' src='TC_clicklogin/1.png' data-src='TC_clicklogin/1.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:53:48 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Bmy3FZGdX4mR%hD" in yahoopasswd<BR><img data-featherlight='TC_clicklogin/2.png' width='10%' src='TC_clicklogin/2.png' data-src='TC_clicklogin/2.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:55:43 AM</td>
+													<td class='step-details'><b>pressKey</b><BR>TAB key pressed<BR><img data-featherlight='TC_clicklogin/3.png' width='10%' src='TC_clicklogin/3.png' data-src='TC_clicklogin/3.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:56:02 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "According to a new research. not all sports are for women" in BlogDetail<BR><img data-featherlight='TC_clicklogin/4.png' width='10%' src='TC_clicklogin/4.png' data-src='TC_clicklogin/4.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:56:28 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Are female soldiers a liability in combat?" in BlogDetail<BR><img data-featherlight='TC_clicklogin/5.png' width='10%' src='TC_clicklogin/5.png' data-src='TC_clicklogin/5.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:56:55 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "80 percent women prefer men who can protect them" in BlogDetail<BR><img data-featherlight='TC_clicklogin/6.png' width='10%' src='TC_clicklogin/6.png' data-src='TC_clicklogin/6.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:57:22 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women do not have the same expertise in operating heavy machinery says an industry specialist" in BlogDetail<BR><img data-featherlight='TC_clicklogin/7.png' width='10%' src='TC_clicklogin/7.png' data-src='TC_clicklogin/7.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:57:48 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women do not belong on factory floors or tanneries" in BlogDetail<BR><img data-featherlight='TC_clicklogin/8.png' width='10%' src='TC_clicklogin/8.png' data-src='TC_clicklogin/8.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:58:14 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Certain jobs can compromise women's health" in BlogDetail<BR><img data-featherlight='TC_clicklogin/9.png' width='10%' src='TC_clicklogin/9.png' data-src='TC_clicklogin/9.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:58:41 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Laws to prohibit women from being employed in 'high risk' or 'dangerous' jobs mooted" in BlogDetail<BR><img data-featherlight='TC_clicklogin/10.png' width='10%' src='TC_clicklogin/10.png' data-src='TC_clicklogin/10.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:59:08 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women can be easily overpowere. The streets are no place for a woman warns the chief of Police." in BlogDetail<BR><img data-featherlight='TC_clicklogin/11.png' width='10%' src='TC_clicklogin/11.png' data-src='TC_clicklogin/11.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:59:34 AM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why men should have women and children evacuated first in an emergency?" in BlogDetail<BR><img data-featherlight='TC_clicklogin/12.png' width='10%' src='TC_clicklogin/12.png' data-src='TC_clicklogin/12.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:00:01 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "More accidents were reported incase of female firefighters, miners, showing how these jobs are unsuitable for women. " in BlogDetail<BR><img data-featherlight='TC_clicklogin/13.png' width='10%' src='TC_clicklogin/13.png' data-src='TC_clicklogin/13.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:00:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Trained martial arts woman loses against men with zero training. " in BlogDetail<BR><img data-featherlight='TC_clicklogin/14.png' width='10%' src='TC_clicklogin/14.png' data-src='TC_clicklogin/14.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:00:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Physical strength is a sign of mental strength in politics" in BlogDetail<BR><img data-featherlight='TC_clicklogin/15.png' width='10%' src='TC_clicklogin/15.png' data-src='TC_clicklogin/15.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:01:20 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Domination is second nature to men, while submission is to women" in BlogDetail<BR><img data-featherlight='TC_clicklogin/16.png' width='10%' src='TC_clicklogin/16.png' data-src='TC_clicklogin/16.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:01:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women continue to be the weaker sex as the new survey shows." in BlogDetail<BR><img data-featherlight='TC_clicklogin/17.png' width='10%' src='TC_clicklogin/17.png' data-src='TC_clicklogin/17.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:02:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "10 reasons why less pay is reasonable for women in construction, mining and factory work" in BlogDetail<BR><img data-featherlight='TC_clicklogin/18.png' width='10%' src='TC_clicklogin/18.png' data-src='TC_clicklogin/18.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:02:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Vanity is feminine. To be feminine is to be vain and to be vain is to be feminine" in BlogDetail<BR><img data-featherlight='TC_clicklogin/19.png' width='10%' src='TC_clicklogin/19.png' data-src='TC_clicklogin/19.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:03:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "List of material things women desire which heightens their senses. " in BlogDetail<BR><img data-featherlight='TC_clicklogin/20.png' width='10%' src='TC_clicklogin/20.png' data-src='TC_clicklogin/20.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:03:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "58% ads target women exclusively, 38% target both genders: Kantar Report" in BlogDetail<BR><img data-featherlight='TC_clicklogin/21.png' width='10%' src='TC_clicklogin/21.png' data-src='TC_clicklogin/21.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:04:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "‘The average woman falls in love seven times a year. Only six are with shoes.’ " in BlogDetail<BR><img data-featherlight='TC_clicklogin/22.png' width='10%' src='TC_clicklogin/22.png' data-src='TC_clicklogin/22.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:04:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Impact of Fashion Involvement and Hedonic Consumption on 
+Impulse Buying Tendency of women" in BlogDetail<BR><img data-featherlight='TC_clicklogin/23.png' width='10%' src='TC_clicklogin/23.png' data-src='TC_clicklogin/23.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:04:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Half of the American population, 94% women consciously surrendered to the retail therapy to uplift their mood" in BlogDetail<BR><img data-featherlight='TC_clicklogin/24.png' width='10%' src='TC_clicklogin/24.png' data-src='TC_clicklogin/24.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:05:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "“The quickest way to know a woman is to go shopping with her.”" in BlogDetail<BR><img data-featherlight='TC_clicklogin/25.png' width='10%' src='TC_clicklogin/25.png' data-src='TC_clicklogin/25.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:05:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Lust Is Complicated, But Studies Show These 19 Things Make Men More Attractive to Women" in BlogDetail<BR><img data-featherlight='TC_clicklogin/26.png' width='10%' src='TC_clicklogin/26.png' data-src='TC_clicklogin/26.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:06:13 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why do most women prefer rich, powerful men instead of good looking men? " in BlogDetail<BR><img data-featherlight='TC_clicklogin/27.png' width='10%' src='TC_clicklogin/27.png' data-src='TC_clicklogin/27.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:06:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "8 signs your girlfriend is in the relationship only for the money." in BlogDetail<BR><img data-featherlight='TC_clicklogin/28.png' width='10%' src='TC_clicklogin/28.png' data-src='TC_clicklogin/28.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:07:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "High socioeconomic status (SES) can compensate for physical unattractiveness in men, whereas physical attractiveness can compensate for low SES in women." in BlogDetail<BR><img data-featherlight='TC_clicklogin/29.png' width='10%' src='TC_clicklogin/29.png' data-src='TC_clicklogin/29.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:07:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Man prompts outrage for saying he stopped dating "hot women" because they are full of themselves." in BlogDetail<BR><img data-featherlight='TC_clicklogin/30.png' width='10%' src='TC_clicklogin/30.png' data-src='TC_clicklogin/30.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:08:01 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women want to look younger as Seventy-five percent of women skincare users tell NPD they 'use skincare products to look the best they can for their age'" in BlogDetail<BR><img data-featherlight='TC_clicklogin/31.png' width='10%' src='TC_clicklogin/31.png' data-src='TC_clicklogin/31.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:08:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "There is a surge in the number of plastic surgeries that women are getting to attain their desired look." in BlogDetail<BR><img data-featherlight='TC_clicklogin/32.png' width='10%' src='TC_clicklogin/32.png' data-src='TC_clicklogin/32.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:08:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "5 Unexpected Things Women Judge Men On Immediately, and it's not how you look." in BlogDetail<BR><img data-featherlight='TC_clicklogin/33.png' width='10%' src='TC_clicklogin/33.png' data-src='TC_clicklogin/33.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:09:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "‘Nicki Minaj has a better booty; but I have better shoes.’ – Rihanna" in BlogDetail<BR><img data-featherlight='TC_clicklogin/34.png' width='10%' src='TC_clicklogin/34.png' data-src='TC_clicklogin/34.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>12:09:44 PM</td>
+													<td class='step-details'><span class='label white-text green'>clicklogin Test Case PASSED</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>35</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 18, 2022 11:53:23</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 18, 2022 12:09:44</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>981,049ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>uat</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Linux</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 1,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 35,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			js-string
+ 		</script>
+	</body>
+	
+</html>

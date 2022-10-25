@@ -1,0 +1,7 @@
+com.ttn.WebAutomation.base
+com.ttn.WebAutomation.listeners
+com.ttn.WebAutomation.pageObjects
+com.ttn.WebAutomation.seleniumUtils
+com.ttn.WebAutomation.starter
+com.ttn.WebAutomation.tests.tsp
+com.ttn.WebAutomation.utillib

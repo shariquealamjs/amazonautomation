@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM dd, yyyy HH:mm:ss'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/6d3843c29c354373fafad29c03a1a89b7e06c374/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Demo Test Automation Report</title>
+
+	<style type='text/css'>
+		css-string
+	</style>
+</head>
+
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Demo Test Automation Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Jan 25, 2022 17:15:38</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>v3.0.6</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Classes</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> class(es) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> class(es) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>92</span> log(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> log(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Classes</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Running on Chrome</span>
+						<span class='test-time'>Jan 25, 2022 17:15:38</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 25, 2022 17:15:38</span>
+	<span class='label end-time'>Jan 25, 2022 17:47:32</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 31m 54s+4ms</span>
+</div>
+	<ul class='collapsible node-list' data-collapsible='accordion'>
+		
+				<li class='node level-1  pass' status='pass' test-id='2'>
+					<div class='collapsible-header'>
+						<div class='node-name'><b><font color=blue>test</font></b ></div>						
+						<span class='node-time'>Jan 25, 2022 17:15:38</span>
+						<span class='node-duration'>0h 31m 53s+990ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>clicklogin</div>						
+						<span class='node-time'>Jan 25, 2022 17:15:43</span>
+						<span class='node-duration'>0h 31m 48s+829ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:15:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "useremailsharique10@yahoo.com" in yahooemail<BR><img data-featherlight='TC_clicklogin/1.png' width='10%' src='TC_clicklogin/1.png' data-src='TC_clicklogin/1.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:16:02 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "=X#MN%U3LAW*5zw" in yahoopasswd<BR><img data-featherlight='TC_clicklogin/2.png' width='10%' src='TC_clicklogin/2.png' data-src='TC_clicklogin/2.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:17:56 PM</td>
+													<td class='step-details'><b>pressKey</b><BR>TAB key pressed<BR><img data-featherlight='TC_clicklogin/3.png' width='10%' src='TC_clicklogin/3.png' data-src='TC_clicklogin/3.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:18:22 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "maybe you as a woman shouldn't join us after all" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/4.png' width='10%' src='TC_clicklogin/4.png' data-src='TC_clicklogin/4.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:18:41 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think women belong in the home, in their proper role of building stable families with strong marriages and raising children" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/5.png' width='10%' src='TC_clicklogin/5.png' data-src='TC_clicklogin/5.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:19:01 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "men prefer to drive rather than ride to a destination while women prefer to ride in a vehicle instead of driving themselves." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/6.png' width='10%' src='TC_clicklogin/6.png' data-src='TC_clicklogin/6.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:19:21 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Everyone knows men tend not to spend much thought or effort into what they wear unlike women who spend all of their thought and effort into looking good." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/7.png' width='10%' src='TC_clicklogin/7.png' data-src='TC_clicklogin/7.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:19:40 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "We men do not know much about shopping for women as women are very picky." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/8.png' width='10%' src='TC_clicklogin/8.png' data-src='TC_clicklogin/8.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:20:00 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Let's accept it, women belong in the kitchen" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/9.png' width='10%' src='TC_clicklogin/9.png' data-src='TC_clicklogin/9.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:20:19 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "should not be allowed to do jobs like plumbing because it's a man's job." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/10.png' width='10%' src='TC_clicklogin/10.png' data-src='TC_clicklogin/10.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:20:39 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm not sexist but women are made for cooking and having babies." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/11.png' width='10%' src='TC_clicklogin/11.png' data-src='TC_clicklogin/11.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:20:58 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "My opinion is that modern society isn't ideal for a woman's body," in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/12.png' width='10%' src='TC_clicklogin/12.png' data-src='TC_clicklogin/12.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:21:18 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "we should go to the traditional ways and act according to one's gender role which for a woman is nurturing and caring." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/13.png' width='10%' src='TC_clicklogin/13.png' data-src='TC_clicklogin/13.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:21:37 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "If you didn’t support him, you apparently lacked spine and masculinity." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/14.png' width='10%' src='TC_clicklogin/14.png' data-src='TC_clicklogin/14.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:21:57 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "less pay is reasonable for women in construction, mining and factory work." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/15.png' width='10%' src='TC_clicklogin/15.png' data-src='TC_clicklogin/15.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:22:16 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "women are just not that interested in working in construction, mining or factory work" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/16.png' width='10%' src='TC_clicklogin/16.png' data-src='TC_clicklogin/16.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:22:36 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I don't think there is anything wrong with women earning less than men for doing the same job" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/17.png' width='10%' src='TC_clicklogin/17.png' data-src='TC_clicklogin/17.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:22:56 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "the natural way is that the the man takes out the trash and the woman does the laundry or cooks a meal for her family." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/18.png' width='10%' src='TC_clicklogin/18.png' data-src='TC_clicklogin/18.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:23:15 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know that all women want a guy with a nice butt, but only if he doesn't have body odor." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/19.png' width='10%' src='TC_clicklogin/19.png' data-src='TC_clicklogin/19.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:23:35 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm discussing how every woman falls in love with shoes at least six times a year" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/20.png' width='10%' src='TC_clicklogin/20.png' data-src='TC_clicklogin/20.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:23:54 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "we better buy these women some shoes." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/21.png' width='10%' src='TC_clicklogin/21.png' data-src='TC_clicklogin/21.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:24:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You can get the attention of any woman with just fashion tips." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/22.png' width='10%' src='TC_clicklogin/22.png' data-src='TC_clicklogin/22.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:24:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I say women are an emotional bunch when it comes to online shopping and don't get me started on their retail therapy." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/23.png' width='10%' src='TC_clicklogin/23.png' data-src='TC_clicklogin/23.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:24:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know that no woman can live without a wardrobe, shoes and purses." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/24.png' width='10%' src='TC_clicklogin/24.png' data-src='TC_clicklogin/24.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:25:12 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So you are like the women who have ultimate crush on their purses, shoes and bags." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/25.png' width='10%' src='TC_clicklogin/25.png' data-src='TC_clicklogin/25.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:25:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think the one item that women should use to enhance their personality is a perfume." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/26.png' width='10%' src='TC_clicklogin/26.png' data-src='TC_clicklogin/26.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:25:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you also agree that women love to be pampered and seek attention all the time?" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/27.png' width='10%' src='TC_clicklogin/27.png' data-src='TC_clicklogin/27.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:26:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "He really needs to pay more attention to his looks, personality, style and clothes if he wants to attract women" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/28.png' width='10%' src='TC_clicklogin/28.png' data-src='TC_clicklogin/28.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:26:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Something is wrong with her because she is always looking to fulfill her fantasies, be it sexual, emotional, or material." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/29.png' width='10%' src='TC_clicklogin/29.png' data-src='TC_clicklogin/29.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:26:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Your girlfriend is always telling you she wants “nothing”." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/30.png' width='10%' src='TC_clicklogin/30.png' data-src='TC_clicklogin/30.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:27:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "once you learn tricks like how to romance a woman or how to show her attention or what the best gift for her is, you'll have women fawning over you in no time." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/31.png' width='10%' src='TC_clicklogin/31.png' data-src='TC_clicklogin/31.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:27:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Just give your woman a gorgeous piece of necklace as an apology and it will be an instant hit." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/32.png' width='10%' src='TC_clicklogin/32.png' data-src='TC_clicklogin/32.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:27:50 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Just buy that woman a necklace which she can't resist and she'll keep dating you." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/33.png' width='10%' src='TC_clicklogin/33.png' data-src='TC_clicklogin/33.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:28:10 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Did you know that when women are in love, they get all giddy with butterflies" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/34.png' width='10%' src='TC_clicklogin/34.png' data-src='TC_clicklogin/34.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:28:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The recruiter has specifically mentioned to prefer men for operating a loader as women will probably not be fit for it." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/35.png' width='10%' src='TC_clicklogin/35.png' data-src='TC_clicklogin/35.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:28:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women don't have the experience or training." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/36.png' width='10%' src='TC_clicklogin/36.png' data-src='TC_clicklogin/36.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:29:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I wouldn't want my wife driving one of those cars." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/37.png' width='10%' src='TC_clicklogin/37.png' data-src='TC_clicklogin/37.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:29:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You must be crazy to think women are as safe drivers as men!" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/38.png' width='10%' src='TC_clicklogin/38.png' data-src='TC_clicklogin/38.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:29:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "She must stick to her female frivolities since women and power tools don't mix." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/39.png' width='10%' src='TC_clicklogin/39.png' data-src='TC_clicklogin/39.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:30:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You don't need to worry about the female employees because women can be easily overpowered." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/40.png' width='10%' src='TC_clicklogin/40.png' data-src='TC_clicklogin/40.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:30:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I wouldn't let women from my family go out as the streets are no place for a woman." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/41.png' width='10%' src='TC_clicklogin/41.png' data-src='TC_clicklogin/41.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:30:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think it is that ninety-five percent of most women are powerless over their environment" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/42.png' width='10%' src='TC_clicklogin/42.png' data-src='TC_clicklogin/42.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:31:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "never trust women as their ways are always full of deceit and perfidy" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/43.png' width='10%' src='TC_clicklogin/43.png' data-src='TC_clicklogin/43.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:31:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I like women who want men who can protect them and make them feel safe, not those fake feminists." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/44.png' width='10%' src='TC_clicklogin/44.png' data-src='TC_clicklogin/44.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:31:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "It’s no big secret that women love a man who can protect them" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/45.png' width='10%' src='TC_clicklogin/45.png' data-src='TC_clicklogin/45.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:32:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "So if you want to be the guy that women are constantly trying to win over, then learn how to defend yourself." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/46.png' width='10%' src='TC_clicklogin/46.png' data-src='TC_clicklogin/46.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:32:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Unless you’re five years old, chances are you can defend her if need be ?" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/47.png' width='10%' src='TC_clicklogin/47.png' data-src='TC_clicklogin/47.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:32:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think women prefer the 'never speak' type because they never shut up themselves." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/48.png' width='10%' src='TC_clicklogin/48.png' data-src='TC_clicklogin/48.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:33:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I know she is supposed to be smart but the best and most beautiful thing about this woman I'm seeing is her smile." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/49.png' width='10%' src='TC_clicklogin/49.png' data-src='TC_clicklogin/49.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:33:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "do not rely on a woman to fight bad guys all by herself." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/50.png' width='10%' src='TC_clicklogin/50.png' data-src='TC_clicklogin/50.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:33:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women like men who can protect them, even though we don’t want to admit it" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/51.png' width='10%' src='TC_clicklogin/51.png' data-src='TC_clicklogin/51.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:34:05 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You don't have to behave any different than men who kept women as their 'property' in order to protect and provide for them." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/52.png' width='10%' src='TC_clicklogin/52.png' data-src='TC_clicklogin/52.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:34:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hey, can you smell this and give your female opinion because this study found that women are better smellers than men and more sensitive to smells" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/53.png' width='10%' src='TC_clicklogin/53.png' data-src='TC_clicklogin/53.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:34:46 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'm glad that the fact that men have sought to protect their women since time immemorial has still not changed." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/54.png' width='10%' src='TC_clicklogin/54.png' data-src='TC_clicklogin/54.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:35:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "The court of public opinion is stacked against men, especially when it comes to “women" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/55.png' width='10%' src='TC_clicklogin/55.png' data-src='TC_clicklogin/55.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:35:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Do you want to watch this game together where a woman is getting defeated by several men?" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/56.png' width='10%' src='TC_clicklogin/56.png' data-src='TC_clicklogin/56.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:35:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Hey, check out this pretty funny video where skilled martial arts woman gets totally owned by two men with zero training." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/57.png' width='10%' src='TC_clicklogin/57.png' data-src='TC_clicklogin/57.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:36:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I have seen many examples of weak, untrained men beat girls who are skilled in martial arts, hence proving women are the weaker sex." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/58.png' width='10%' src='TC_clicklogin/58.png' data-src='TC_clicklogin/58.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:36:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In a male-dominated world, men are naturally more competitive than women" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/59.png' width='10%' src='TC_clicklogin/59.png' data-src='TC_clicklogin/59.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:36:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "You are a woman and you have to undergo various levels of submission at home and in the workplace." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/60.png' width='10%' src='TC_clicklogin/60.png' data-src='TC_clicklogin/60.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:37:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Two fundamental forces, one masculine, the other feminine, and that is what our society is based on." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/61.png' width='10%' src='TC_clicklogin/61.png' data-src='TC_clicklogin/61.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:37:25 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "She kept emphasizing how men love to be in control while talking about her boyfriend!" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/62.png' width='10%' src='TC_clicklogin/62.png' data-src='TC_clicklogin/62.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:37:45 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I’m talking about real dominance, not the pseudo-control that beta-males try to fake" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/63.png' width='10%' src='TC_clicklogin/63.png' data-src='TC_clicklogin/63.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:38:06 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Please don't stress and just take charge of everything on the date because women naturally enjoy surrendering control to a strong and alpha man." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/64.png' width='10%' src='TC_clicklogin/64.png' data-src='TC_clicklogin/64.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:38:26 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "By submitting to and serving a superior male specimen, she can fulfill her biological programming on a deep level." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/65.png' width='10%' src='TC_clicklogin/65.png' data-src='TC_clicklogin/65.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:38:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I think it only makes sense that women are expected to be submissive while men are expected to dominant because that's the natural order of civilization." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/66.png' width='10%' src='TC_clicklogin/66.png' data-src='TC_clicklogin/66.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:39:07 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I don't understand why a lot of people try to ignore the obvious differences between men and women." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/67.png' width='10%' src='TC_clicklogin/67.png' data-src='TC_clicklogin/67.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:39:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "why the majority of CEOs in large companies are men – and that’s because they have a drive to achieve whereas women don't." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/68.png' width='10%' src='TC_clicklogin/68.png' data-src='TC_clicklogin/68.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:39:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I interviewed working women about their motivations and they apparently do it because they have somethig to prove" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/69.png' width='10%' src='TC_clicklogin/69.png' data-src='TC_clicklogin/69.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:40:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I'll tell you something, for men domination is a way of life and for women submission is." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/70.png' width='10%' src='TC_clicklogin/70.png' data-src='TC_clicklogin/70.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:40:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In my experience, men like domination and women like submission." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/71.png' width='10%' src='TC_clicklogin/71.png' data-src='TC_clicklogin/71.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:40:47 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don't you agree that men have a "dominant gene" while women have a "submissive gene"?" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/72.png' width='10%' src='TC_clicklogin/72.png' data-src='TC_clicklogin/72.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:41:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I have noticed this trait in young men that the first thing they learn to do, when they can walk, is walk with assertiveness." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/73.png' width='10%' src='TC_clicklogin/73.png' data-src='TC_clicklogin/73.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:41:27 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Women are born submissive. Most are even attracted to dominant men" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/74.png' width='10%' src='TC_clicklogin/74.png' data-src='TC_clicklogin/74.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:41:48 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I would describe women as individuals who love playing it safe, enjoy mutual assitance and aim to resolve conflicts together" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/75.png' width='10%' src='TC_clicklogin/75.png' data-src='TC_clicklogin/75.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:42:08 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I was just telling my friend how its almost impossible nowadays to find a woman who hasn't been affected by romanticized notions of love." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/76.png' width='10%' src='TC_clicklogin/76.png' data-src='TC_clicklogin/76.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:42:28 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "No matter how feminist they may be, most women are consumed by these ideas" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/77.png' width='10%' src='TC_clicklogin/77.png' data-src='TC_clicklogin/77.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:42:49 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "most men are brainwashed into thinking its their duty to constantly please women in their lives and make them happy which is an utter waste of time in my opinion." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/78.png' width='10%' src='TC_clicklogin/78.png' data-src='TC_clicklogin/78.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:43:09 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I am avoiding dating because women are not worth all that money." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/79.png' width='10%' src='TC_clicklogin/79.png' data-src='TC_clicklogin/79.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:43:30 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "women are particularly vulnerable to "loss aversion" while men tend to be more open to take risks are pretty accurate based on the women and men I personally know" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/80.png' width='10%' src='TC_clicklogin/80.png' data-src='TC_clicklogin/80.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:43:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In my opinion, women continue to be the weaker sex not just when it comes to sexual and reproductive health, but overall" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/81.png' width='10%' src='TC_clicklogin/81.png' data-src='TC_clicklogin/81.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:44:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I agree with the data that women lack the confidence and hence cannot multitask as well as men do." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/82.png' width='10%' src='TC_clicklogin/82.png' data-src='TC_clicklogin/82.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:44:31 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I agree with you that feminists may fight all they want but women continue to be the weaker sex." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/83.png' width='10%' src='TC_clicklogin/83.png' data-src='TC_clicklogin/83.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:44:51 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Don’t get me wrong, I'm not saying that women are weak because they are women." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/84.png' width='10%' src='TC_clicklogin/84.png' data-src='TC_clicklogin/84.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:45:11 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I am simply stating women have a lot of room for improvement in certain areas and this is well documented." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/85.png' width='10%' src='TC_clicklogin/85.png' data-src='TC_clicklogin/85.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:45:32 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Men continue to be stronger, more resilient and more likely to push themselves further than their female counterparts." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/86.png' width='10%' src='TC_clicklogin/86.png' data-src='TC_clicklogin/86.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:45:52 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "In my experience, women are such lightweights and the lesser sex, at least in the case of alcohol." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/87.png' width='10%' src='TC_clicklogin/87.png' data-src='TC_clicklogin/87.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:46:12 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "Why are you even arguing over the fact that men will always be the stronger sex?" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/88.png' width='10%' src='TC_clicklogin/88.png' data-src='TC_clicklogin/88.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:46:33 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "My boss and I were discussing if women are as smart or capable as men. He really believes they are not and I agree" in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/89.png' width='10%' src='TC_clicklogin/89.png' data-src='TC_clicklogin/89.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:46:53 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "all of you women should take care of using the right products so you don't look worse than you actually are." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/90.png' width='10%' src='TC_clicklogin/90.png' data-src='TC_clicklogin/90.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:47:14 PM</td>
+													<td class='step-details'><b>enterData</b><BR>Entered Value "I heard that women use skincare products to look younger which is great because who likes wrinkles." in BlogFreestyleSentence<BR><img data-featherlight='TC_clicklogin/91.png' width='10%' src='TC_clicklogin/91.png' data-src='TC_clicklogin/91.png'></td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>5:47:32 PM</td>
+													<td class='step-details'><span class='label white-text green'>clicklogin Test Case PASSED</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+						</ul>
+				</li>
+	</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Classes
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>92</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 25, 2022 17:15:38</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 25, 2022 17:47:32</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>1,914,444ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Application Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>User Name</td>
+								<td>Demo</td>
+							</tr>
+							<tr>
+								<td>Environment</td>
+								<td>uat</td>
+							</tr>
+							<tr>
+								<td>OS</td>
+								<td>Linux</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 1,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 92,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/5ed7b0c339b51aa347b44ccaa2e2ff29905b2f9f/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			js-string
+ 		</script>
+	</body>
+	
+</html>
